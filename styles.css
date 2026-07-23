@@ -114,9 +114,14 @@ a { text-decoration: none; }
   top: 0;
   z-index: 100;
   box-shadow: 0 1px 3px rgba(0,0,0,.04);
-  transition: transform .25s ease;
+  transition: clip-path .3s ease;
+  clip-path: inset(0 0 0 0); /* fully visible: nothing clipped */
 }
-.app-header.header-hidden { transform: translateY(-100%); }
+/* Hiding: the bottom edge rises up like a shade being pulled up over the bar,
+   until the whole thing is covered. Reappearing reverses it (shade drops
+   back down). Anchored at the top so it never moves position, only what's
+   visible changes. */
+.app-header.header-hidden { clip-path: inset(0 0 100% 0); }
 .brand { display: flex; align-items: center; gap: 10px; cursor: pointer; flex-shrink: 0; }
 .brand-logo {
   width: 40px; height: 40px; border-radius: 50%;
@@ -856,8 +861,7 @@ input.field-error, textarea.field-error {
   margin-bottom: 12px; background: var(--bg);
 }
 .tmr-top { display: flex; gap: 10px; align-items: center; margin-bottom: 10px; }
-.tmr-top .tm-name { flex: 1.2; }
-.tmr-top .tm-phone { flex: 1; }
+.tmr-top .tm-firstname, .tmr-top .tm-lastname { flex: 1; }
 .tmr-trades-label { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
 .tmr-trades-grid { display: flex; flex-wrap: wrap; gap: 8px; }
 .tmr-trade-pill {

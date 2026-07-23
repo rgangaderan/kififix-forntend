@@ -68,6 +68,88 @@ function autofillPersonal() {
 }
 
 /* ============================================================
+   TRADIE LOGIN – email-first entry point
+   There's no real backend for the tradie side yet, so "does this email
+   already have an account" is approximated against the one tradie profile
+   this demo persists in localStorage (kiwifix_tradie_profile, written by
+   completeTradieOnboarding()). Good enough for a single-browser demo;
+   swap for a real lookup once the tradie backend exists.
+   ============================================================ */
+let tradieAuthContext = 'signup'; // 'signup' (new tradie) or 'login' (existing tradie) — drives what happens after OTP
+
+function resetTradieLoginForm() {
+  const input = document.getElementById('tradieLoginEmail');
+  if (input) input.value = '';
+  const msg = document.getElementById('tradieWelcomeBackMsg');
+  if (msg) msg.style.display = 'none';
+}
+
+function getStoredTradieProfile() {
+  try { return JSON.parse(localStorage.getItem('kiwifix_tradie_profile') || 'null'); }
+  catch (e) { return null; }
+}
+
+function handleTradieLoginContinue() {
+  clearErrors('tradie-login');
+  const input = document.getElementById('tradieLoginEmail');
+  const email = (input?.value || '').trim().toLowerCase();
+  if (!email || !email.includes('@')) {
+    showError('tradie-login', 'Please enter a valid email address.');
+    return;
+  }
+
+  const existing = getStoredTradieProfile();
+  if (existing && existing.email && existing.email.toLowerCase() === email) {
+    // Existing tradie — carry their details into the OTP step and greet them.
+    tradieAuthContext = 'login';
+    signupData.email = existing.email;
+    signupData.firstName = existing.firstName || '';
+    signupData.lastName = existing.lastName || '';
+    signupData.mobile = existing.mobile || '';
+
+    const msg = document.getElementById('tradieWelcomeBackMsg');
+    if (msg) {
+      msg.textContent = `👋 Welcome back, ${existing.firstName || 'there'}! Sending you a verification code...`;
+      msg.style.display = 'block';
+    }
+    setTimeout(() => nav('tradie-verify-mobile'), 900); // brief pause so the welcome message is actually seen
+  } else {
+    // No match — this is a new tradie, send them to Create Account with the
+    // email already filled in rather than making them retype it.
+    tradieAuthContext = 'signup';
+    nav('tradie-signup');
+    setTimeout(() => {
+      const emailInput = document.querySelector('#tradie-signup input[placeholder="e.g. john.smith@email.com"]');
+      if (emailInput) emailInput.value = email;
+      showError('tradie-signup', "We couldn't find an account with that email — let's get you set up below.");
+    }, 0);
+  }
+}
+
+// Populates the OTP screen's "sent to" targets with the real contact details
+// instead of the old hardcoded placeholder phone/email.
+function renderTradieVerifyTargets() {
+  const mobileEl = document.getElementById('tvMobileTarget');
+  const emailEl = document.getElementById('tvEmailTarget');
+  if (mobileEl) mobileEl.textContent = signupData.mobile || 'your mobile';
+  if (emailEl) emailEl.textContent = signupData.email || 'your email';
+}
+
+// Existing tradies logging back in should land on their dashboard, not get
+// routed back through the registration wizard from scratch.
+function tradieOtpContinue() {
+  if (tradieAuthContext === 'login') {
+    window.location.href = 'tradie-dashboard.html';
+  } else {
+    nav('tradie-services');
+  }
+}
+
+function tradieVerifyBack() {
+  nav(tradieAuthContext === 'login' ? 'tradie-login' : 'tradie-signup');
+}
+
+/* ============================================================
    TRADIE PROFILE DATA – captured live during registration,
    handed off to the dashboard (tradie-dashboard.html) on submit
    ============================================================ */
@@ -161,8 +243,8 @@ function addTeamMember() {
   row.id = id;
   row.innerHTML = `
     <div class="tmr-top">
-      <input class="form-input tm-name" placeholder="Staff member's name">
-      <input class="form-input tm-phone" placeholder="Phone (optional)">
+      <input class="form-input tm-firstname" placeholder="First name">
+      <input class="form-input tm-lastname" placeholder="Last name">
       <button type="button" class="rcc-edit" onclick="removeTeamMember('${id}')" title="Remove">✕</button>
     </div>
     <div class="tmr-trades-label">Services this person provides (select all that apply):</div>
@@ -281,11 +363,15 @@ function syncBusinessTradesToPage1() {
 }
 
 function getTeamMembers() {
-  return [...document.querySelectorAll('#teamMembersList .team-member-row')].map(row => ({
-    name: row.querySelector('.tm-name')?.value.trim() || '',
-    trades: [...row.querySelectorAll('.tm-trade-cb:checked')].map(cb => cb.value),
-    phone: row.querySelector('.tm-phone')?.value.trim() || '',
-  })).filter(m => m.name); // drop blank rows
+  return [...document.querySelectorAll('#teamMembersList .team-member-row')].map(row => {
+    const firstName = row.querySelector('.tm-firstname')?.value.trim() || '';
+    const lastName = row.querySelector('.tm-lastname')?.value.trim() || '';
+    return {
+      firstName, lastName,
+      name: [firstName, lastName].filter(Boolean).join(' '),
+      trades: [...row.querySelectorAll('.tm-trade-cb:checked')].map(cb => cb.value),
+    };
+  }).filter(m => m.firstName); // drop blank rows
 }
 
 // Handoff to the dashboard: a brand-new tradie has zero jobs/reviews/earnings.
@@ -303,6 +389,8 @@ function completeTradieOnboarding() {
   const dashboardData = {
     firstName: tradieProfile.firstName || signupData.firstName || 'there',
     lastName:  tradieProfile.lastName  || signupData.lastName  || '',
+    email: signupData.email || '', // used by the login page to recognise a returning tradie
+    mobile: signupData.mobile || '',
     tradeTypes: tradieProfile.tradeTypes.length ? tradieProfile.tradeTypes : ['Tradie'],
     services: tradieProfile.services,
     businessName: tradieProfile.businessName,
@@ -625,6 +713,8 @@ function nav(pageId, fromPopState) {
   if (pageId === 'tradie-services') setTimeout(() => updateServicesList(), 0);
   if (pageId === 'tradie-personal') setTimeout(autofillPersonal, 0);
   if (pageId === 'tradie-review-submit') setTimeout(renderReviewSubmit, 0);
+  if (pageId === 'tradie-login') setTimeout(resetTradieLoginForm, 0);
+  if (pageId === 'tradie-verify-mobile') setTimeout(renderTradieVerifyTargets, 0);
   // Update profile bars whenever a profile step is shown
   const profilePages = ['tradie-services','tradie-personal','tradie-business','tradie-licence','tradie-areas','tradie-availability','tradie-review-submit'];
   if (profilePages.includes(pageId)) setTimeout(() => updateProfileBars(), 0);

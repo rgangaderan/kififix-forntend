@@ -27,7 +27,7 @@
     <nav class="header-nav">
       <button onclick="nav('how-it-works')">How It Works</button>
       <button onclick="nav('job-step1')">For Job Posters</button>
-      <button onclick="nav('tradie-signup')">For Tradies</button>
+      <button onclick="nav('tradie-login')">For Tradies</button>
       <button onclick="nav('about-us')">About Us</button>
       <button onclick="nav('about-us')">Contact</button>
     </nav>
@@ -40,7 +40,7 @@
       <img src="assets/card-job.png" alt="I need a job done"/>
       <button class="landing-card-btn">I'm a Job Poster →</button>
     </div>
-    <div class="landing-card" onclick="nav('tradie-signup')">
+    <div class="landing-card" onclick="nav('tradie-login')">
       <img src="assets/card-tradie.png" alt="I'm a tradie"/>
       <button class="landing-card-btn">I'm a Tradie →</button>
     </div>
@@ -70,12 +70,12 @@
     <nav class="header-nav">
       <button class="nav-active">How It Works</button>
       <button onclick="nav('job-step1')">For Job Posters</button>
-      <button onclick="nav('tradie-signup')">For Tradies</button>
+      <button onclick="nav('tradie-login')">For Tradies</button>
       <button onclick="nav('about-us')">About Us</button>
       <button onclick="nav('about-us')">Contact</button>
     </nav>
     <div class="header-right">
-      <button class="btn-login" onclick="nav('tradie-signup')">Tradie Login</button>
+      <button class="btn-login" onclick="nav('tradie-login')">Tradie Login</button>
     </div>
   </header>
 
@@ -101,7 +101,7 @@
         <div class="hiw-step"><div class="hiw-step-num">2</div><div><strong>Browse matched jobs</strong><p>See job postings that match your trade and areas — no more cold calling for work.</p></div></div>
         <div class="hiw-step"><div class="hiw-step-num">3</div><div><strong>Quote and win the job</strong><p>Send a quote, chat with the customer, and lock in jobs that fit your schedule.</p></div></div>
         <div class="hiw-step"><div class="hiw-step-num">4</div><div><strong>Get paid, build your name</strong><p>Complete the job, get paid securely, and build up the reviews that bring in more work.</p></div></div>
-        <button class="btn-next" style="margin-top:8px" onclick="nav('tradie-signup')">Sign Up as a Tradie →</button>
+        <button class="btn-next" style="margin-top:8px" onclick="nav('tradie-login')">Sign Up as a Tradie →</button>
       </div>
     </div>
   </div>
@@ -119,12 +119,12 @@
     <nav class="header-nav">
       <button onclick="nav('how-it-works')">How It Works</button>
       <button onclick="nav('job-step1')">For Job Posters</button>
-      <button onclick="nav('tradie-signup')">For Tradies</button>
+      <button onclick="nav('tradie-login')">For Tradies</button>
       <button class="nav-active">About Us</button>
       <button class="nav-active">Contact</button>
     </nav>
     <div class="header-right">
-      <button class="btn-login" onclick="nav('tradie-signup')">Tradie Login</button>
+      <button class="btn-login" onclick="nav('tradie-login')">Tradie Login</button>
     </div>
   </header>
 
@@ -166,12 +166,12 @@
     <nav class="header-nav">
       <button onclick="nav('how-it-works')">How It Works</button>
       <button class="nav-active">For Job Posters</button>
-      <button onclick="nav('tradie-signup')">For Tradies</button>
+      <button onclick="nav('tradie-login')">For Tradies</button>
       <button onclick="nav('about-us')">About Us</button>
       <button onclick="nav('about-us')">Contact</button>
     </nav>
     <div class="header-right">
-      <button class="btn-login" onclick="nav('tradie-signup')">Tradie Login</button>
+      <button class="btn-login" onclick="nav('tradie-login')">Tradie Login</button>
     </div>
   </header>
 
@@ -1289,6 +1289,63 @@
 </section>
 
 <!-- ============================================================
+  TRADIE LOGIN – EMAIL-FIRST ENTRY POINT
+  Every tradie entry point (nav, landing card, CTAs) lands here first.
+  We check the email against the one tradie profile this demo persists in
+  localStorage (kiwifix_tradie_profile) — existing match = welcome back and
+  straight to OTP; no match = bounce to Create Account, prefilled.
+============================================================ -->
+<section id="tradie-login" class="page app-page">
+  <header class="app-header">
+    <div class="brand" onclick="nav('home')" style="cursor:pointer">
+      <div class="brand-logo"><img src="assets/logo.png" alt="KiwiFix"/></div>
+      <div><div class="brand-name">KiwiFix</div><div class="brand-tag">Trusted Trades. Right When You Need Us.</div></div>
+    </div>
+    <nav class="header-nav">
+      <button onclick="nav('how-it-works')">How It Works</button>
+      <button onclick="nav('job-step1')">For Job Posters</button>
+      <button class="nav-active">For Tradies</button>
+      <button onclick="nav('about-us')">About Us</button>
+      <button onclick="nav('about-us')">Contact</button>
+    </nav>
+    <div class="header-right">
+    </div>
+  </header>
+  <div class="auth-split-body">
+    <div class="auth-split-left">
+      <div class="asl-badge">🇳🇿 New Zealand's Tradie Marketplace</div>
+      <h2 class="asl-title">Grow your tradie business with KiwiFix</h2>
+      <p class="asl-sub">Join thousands of verified tradies already winning work across New Zealand.</p>
+      <ul class="auth-benefit-list">
+        <li><span class="abl-icon">💼</span><span>Get matched with local jobs in your area</span></li>
+        <li><span class="abl-icon">⭐</span><span>Build your profile and grow your reputation</span></li>
+        <li><span class="abl-icon">💳</span><span>Secure payments handled through the platform</span></li>
+        <li><span class="abl-icon">🆓</span><span>Free to join — pay only when you win work</span></li>
+      </ul>
+      <div class="asl-stats-row">
+        <div class="asl-stat"><div class="asl-stat-num">5,000+</div><div class="asl-stat-lbl">Tradies</div></div>
+        <div class="asl-stat"><div class="asl-stat-num">12,000+</div><div class="asl-stat-lbl">Jobs Posted</div></div>
+        <div class="asl-stat"><div class="asl-stat-num">4.8★</div><div class="asl-stat-lbl">Avg Rating</div></div>
+      </div>
+    </div>
+    <div class="auth-split-right">
+      <div class="auth-split-form">
+        <h2 class="auth-title">Log in to KiwiFix</h2>
+        <p class="auth-sub">Enter your email and we'll take it from there.</p>
+        <div class="field-group">
+          <label class="field-label">Email address</label>
+          <input class="form-input" id="tradieLoginEmail" placeholder="e.g. john.smith@email.com"
+            onkeydown="if(event.key==='Enter'){event.preventDefault();handleTradieLoginContinue();}"/>
+        </div>
+        <div id="tradieWelcomeBackMsg" class="auth-security-note" style="display:none;background:#f0fdf4;border-color:var(--green);color:var(--green-dark)"></div>
+        <button class="btn-primary-full" onclick="handleTradieLoginContinue()">Continue →</button>
+        <div class="auth-link-row">New to KiwiFix? <a onclick="nav('tradie-signup')" style="cursor:pointer;color:var(--green);font-weight:700">Create an account</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
   TRADIE SIGNUP – CREATE ACCOUNT
 ============================================================ -->
 <section id="tradie-signup" class="page app-page">
@@ -1349,7 +1406,7 @@
         <div class="field-group"><label class="field-label">Email address</label><input class="form-input" placeholder="e.g. john.smith@email.com"/></div>
         <div class="auth-security-note"><span>🛡</span> We'll send one verification code to your mobile and email. Your information is safe with us.</div>
         <button class="btn-primary-full" onclick="validateSignup()">Send Verification Code →</button>
-        <div class="auth-link-row">Already have an account? <a onclick="nav('tradie-verify-mobile')" style="cursor:pointer;color:var(--green);font-weight:700">Log in</a></div>
+        <div class="auth-link-row">Already have an account? <a onclick="nav('tradie-login')" style="cursor:pointer;color:var(--green);font-weight:700">Log in</a></div>
       </div>
     </div>
   </div>
@@ -1396,8 +1453,8 @@
         </div>
         <h2 class="auth-title">Verify your account</h2>
         <p class="auth-sub">Enter the 6-digit code we sent to</p>
-        <div class="verify-target-row">📞 <strong>021 123 4567</strong> <span class="edit-link">Edit</span></div>
-        <div class="verify-target-row">✉ <strong>john.smith@email.com</strong> <span class="edit-link">Edit</span></div>
+        <div class="verify-target-row">📞 <strong id="tvMobileTarget">021 123 4567</strong> <span class="edit-link" onclick="nav('tradie-signup')">Edit</span></div>
+        <div class="verify-target-row">✉ <strong id="tvEmailTarget">john.smith@email.com</strong> <span class="edit-link" onclick="nav('tradie-signup')">Edit</span></div>
         <div class="otp-inputs-row" id="otp-mobile" style="margin:28px 0">
           <input class="otp-box" maxlength="1" oninput="otpInput(this,'otp-mobile','tradie-services')" onkeydown="otpKey(event,this)"/>
           <input class="otp-box" maxlength="1" oninput="otpInput(this,'otp-mobile','tradie-services')" onkeydown="otpKey(event,this)"/>
@@ -1409,8 +1466,8 @@
         <div id="otp-mobile-verified" class="otp-verified-msg" style="display:none">✅ Account verified!</div>
         <div style="margin-bottom:20px;font-size:14px">Resend code in <span class="green-text">00:45</span></div>
         <div class="auth-security-note"><span>🛡</span> We use OTP to keep your account secure.</div>
-        <button id="otp-mobile-btn" class="btn-primary-full otp-btn-waiting" onclick="nav('tradie-services')" disabled>Continue →</button>
-        <button class="btn-back-link" onclick="nav('tradie-signup')">← Back</button>
+        <button id="otp-mobile-btn" class="btn-primary-full otp-btn-waiting" onclick="tradieOtpContinue()" disabled>Continue →</button>
+        <button class="btn-back-link" onclick="tradieVerifyBack()">← Back</button>
       </div>
     </div>
   </div>
