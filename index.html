@@ -1,0 +1,1949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>KiwiFix – Trusted Kiwis. Right When You Need Us.</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<main>
+
+<!-- ============================================================
+  LANDING PAGE
+============================================================ -->
+<section id="home" class="page active landing-page">
+
+  <!-- Full-page hero image -->
+  <img class="landing-bg" src="assets/landing-hero.png" alt="KiwiFix"/>
+
+  <!-- Header overlaid on top -->
+  <header class="app-header landing-header">
+    <div class="brand" onclick="nav('home')" style="cursor:pointer">
+      <div class="brand-logo"><img src="assets/logo.png" alt="KiwiFix"/></div>
+      <div><div class="brand-name">KiwiFix</div><div class="brand-tag">Trusted Trades. Right When You Need Us.</div></div>
+    </div>
+    <nav class="header-nav">
+      <button onclick="nav('how-it-works')">How It Works</button>
+      <button onclick="nav('job-step1')">For Job Posters</button>
+      <button onclick="nav('tradie-signup')">For Tradies</button>
+      <button onclick="nav('about-us')">About Us</button>
+      <button onclick="nav('about-us')">Contact</button>
+    </nav>
+    <div class="landing-nz-badge">🌿 Proudly in New Zealand</div>
+  </header>
+
+  <!-- Two choice cards — bottom-left over the landscape photo -->
+  <div class="landing-cards">
+    <div class="landing-card" onclick="nav('job-step1')">
+      <img src="assets/card-job.png" alt="I need a job done"/>
+      <button class="landing-card-btn">I'm a Job Poster →</button>
+    </div>
+    <div class="landing-card" onclick="nav('tradie-signup')">
+      <img src="assets/card-tradie.png" alt="I'm a tradie"/>
+      <button class="landing-card-btn">I'm a Tradie →</button>
+    </div>
+  </div>
+
+  <!-- Trust bar — sits just below the cards -->
+  <div class="landing-trust">
+    <img src="assets/trust-bar.png" alt="Verified Tradies | 5 Star Rated | Secure Payments | Fast Support" onerror="this.style.display='none'"/>
+  </div>
+
+  <!-- "Kiwis supporting Kiwis" banner — was baked into landing-hero.png before, now a separate overlay image like the trust bar above -->
+  <div class="landing-kiwi-support">
+    <img src="assets/kiwi-support-kiwi.png" alt="Kiwis supporting Kiwis — Let's build stronger communities together" onerror="this.style.display='none'"/>
+  </div>
+
+</section>
+
+<!-- ============================================================
+  HOW IT WORKS
+============================================================ -->
+<section id="how-it-works" class="page app-page">
+  <header class="app-header">
+    <div class="brand" onclick="nav('home')">
+      <div class="brand-logo"><img src="assets/logo.png" alt="KiwiFix"/></div>
+      <div><div class="brand-name">KiwiFix</div><div class="brand-tag">Trusted Trades. Right When You Need Us.</div></div>
+    </div>
+    <nav class="header-nav">
+      <button class="nav-active">How It Works</button>
+      <button onclick="nav('job-step1')">For Job Posters</button>
+      <button onclick="nav('tradie-signup')">For Tradies</button>
+      <button onclick="nav('about-us')">About Us</button>
+      <button onclick="nav('about-us')">Contact</button>
+    </nav>
+    <div class="header-right">
+      <button class="btn-login" onclick="nav('tradie-signup')">Tradie Login</button>
+    </div>
+  </header>
+
+  <div class="page-body">
+    <h1 class="page-title">How KiwiFix works</h1>
+    <p class="page-sub" style="margin-bottom:32px">Whether you need a job done or you're the one doing it, getting started only takes a few minutes.</p>
+
+    <div class="how-it-works-grid">
+      <div class="form-card how-it-works-col">
+        <div class="hiw-col-title">🏠 For Job Posters</div>
+        <p class="page-sub" style="margin-bottom:20px">Post a job and get matched with trusted local tradies — no calling around, no guesswork.</p>
+        <div class="hiw-step"><div class="hiw-step-num">1</div><div><strong>Tell us what you need</strong><p>Describe the job, add photos, and let us know your location and how urgent it is.</p></div></div>
+        <div class="hiw-step"><div class="hiw-step-num">2</div><div><strong>Get matched instantly</strong><p>We match your job to the right trade type and show you verified, local tradies who can help.</p></div></div>
+        <div class="hiw-step"><div class="hiw-step-num">3</div><div><strong>Choose your tradie</strong><p>Compare ratings and reviews from other Kiwis, then pick who you'd like to do the job.</p></div></div>
+        <div class="hiw-step"><div class="hiw-step-num">4</div><div><strong>Job done, sorted</strong><p>Your tradie completes the work and you pay securely through KiwiFix — simple as that.</p></div></div>
+        <button class="btn-next" style="margin-top:8px" onclick="nav('job-step1')">Post a Job →</button>
+      </div>
+
+      <div class="form-card how-it-works-col">
+        <div class="hiw-col-title">🔧 For Tradies</div>
+        <p class="page-sub" style="margin-bottom:20px">Find real jobs from real Kiwis in your area, and grow your business without chasing leads.</p>
+        <div class="hiw-step"><div class="hiw-step-num">1</div><div><strong>Sign up &amp; get verified</strong><p>Tell us your trade, service areas, and licence details so customers know you're the real deal.</p></div></div>
+        <div class="hiw-step"><div class="hiw-step-num">2</div><div><strong>Browse matched jobs</strong><p>See job postings that match your trade and areas — no more cold calling for work.</p></div></div>
+        <div class="hiw-step"><div class="hiw-step-num">3</div><div><strong>Quote and win the job</strong><p>Send a quote, chat with the customer, and lock in jobs that fit your schedule.</p></div></div>
+        <div class="hiw-step"><div class="hiw-step-num">4</div><div><strong>Get paid, build your name</strong><p>Complete the job, get paid securely, and build up the reviews that bring in more work.</p></div></div>
+        <button class="btn-next" style="margin-top:8px" onclick="nav('tradie-signup')">Sign Up as a Tradie →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  ABOUT US
+============================================================ -->
+<section id="about-us" class="page app-page">
+  <header class="app-header">
+    <div class="brand" onclick="nav('home')">
+      <div class="brand-logo"><img src="assets/logo.png" alt="KiwiFix"/></div>
+      <div><div class="brand-name">KiwiFix</div><div class="brand-tag">Trusted Trades. Right When You Need Us.</div></div>
+    </div>
+    <nav class="header-nav">
+      <button onclick="nav('how-it-works')">How It Works</button>
+      <button onclick="nav('job-step1')">For Job Posters</button>
+      <button onclick="nav('tradie-signup')">For Tradies</button>
+      <button class="nav-active">About Us</button>
+      <button class="nav-active">Contact</button>
+    </nav>
+    <div class="header-right">
+      <button class="btn-login" onclick="nav('tradie-signup')">Tradie Login</button>
+    </div>
+  </header>
+
+  <div class="page-body">
+    <h1 class="page-title">About KiwiFix</h1>
+    <p class="page-sub" style="margin-bottom:24px">Kiwis supporting Kiwis — that's what KiwiFix is all about.</p>
+
+    <div class="form-card" style="max-width:760px">
+      <p style="margin:0 0 16px;line-height:1.7">
+        KiwiFix connects New Zealanders who need a job done with trusted, verified local tradies —
+        from a leaky tap to a full renovation. We built KiwiFix because finding a reliable tradie
+        shouldn't mean endless phone calls and waiting around for a call back, and growing a trade
+        business shouldn't depend on luck or word of mouth alone.
+      </p>
+      <p style="margin:0 0 24px;line-height:1.7">
+        Every tradie on KiwiFix is verified against their trade licence, so job posters can book with
+        confidence, and every job posted is matched to the right local trades so tradies spend less
+        time chasing leads and more time doing the work they're good at.
+      </p>
+
+      <div class="hiw-col-title" style="margin-bottom:10px">Get in touch</div>
+      <p style="margin:0;line-height:1.7">
+        Have a question, need support, or just want to say hi?<br>
+        📧 <a href="mailto:support@kiwifix.com" style="color:var(--green);font-weight:700">support@kiwifix.com</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  JOB STEP 1 – JOB DETAILS (icon grid design)
+============================================================ -->
+<section id="job-step1" class="page app-page">
+  <header class="app-header">
+    <div class="brand" onclick="nav('home')">
+      <div class="brand-logo"><img src="assets/logo.png" alt="KiwiFix"/></div>
+      <div><div class="brand-name">KiwiFix</div><div class="brand-tag">Trusted Trades. Right When You Need Us.</div></div>
+    </div>
+    <nav class="header-nav">
+      <button onclick="nav('how-it-works')">How It Works</button>
+      <button class="nav-active">For Job Posters</button>
+      <button onclick="nav('tradie-signup')">For Tradies</button>
+      <button onclick="nav('about-us')">About Us</button>
+      <button onclick="nav('about-us')">Contact</button>
+    </nav>
+    <div class="header-right">
+      <button class="btn-login" onclick="nav('tradie-signup')">Tradie Login</button>
+    </div>
+  </header>
+
+  <div class="page-body">
+    <div class="job-layout">
+      <!-- LEFT: FORM -->
+      <div class="job-main-col">
+        <h1 class="page-title">Tell us about your job</h1>
+        <p class="page-sub">The more details you provide, the better matches you'll receive.</p>
+
+        <!-- 4-step stepper -->
+        <div class="stepper stepper-4">
+          <div class="step-item active"><div class="step-circle">1</div><span>Job Details</span></div>
+          <div class="step-line"></div>
+          <div class="step-item"><div class="step-circle">2</div><span>Location</span></div>
+          <div class="step-line"></div>
+          <div class="step-item"><div class="step-circle">3</div><span>Preferences</span></div>
+          <div class="step-line"></div>
+          <div class="step-item"><div class="step-circle">4</div><span>Review &amp; Post</span></div>
+        </div>
+
+        <div class="form-card">
+          <!-- Section 1: Category icon grid -->
+          <div class="form-section-label">1. What type of job do you need?</div>
+          <div class="cat-grid" id="catGrid">
+
+            <button class="cat-btn active" data-cat="Plumbing" onclick="selectCat(this)">
+              <div class="cat-check-badge">✓</div>
+              <div class="cat-icon-wrap">
+                <svg viewBox="0 0 52 52" fill="none"><rect x="6" y="22" width="40" height="10" rx="5" fill="#15803D"/><rect x="6" y="8" width="10" height="20" rx="5" fill="#15803D"/><rect x="36" y="32" width="10" height="14" rx="5" fill="#15803D"/></svg>
+              </div>
+              <span>Plumbing</span>
+            </button>
+
+            <button class="cat-btn" data-cat="Electrical" onclick="selectCat(this)">
+              <div class="cat-check-badge">✓</div>
+              <div class="cat-icon-wrap">
+                <svg viewBox="0 0 52 52" fill="none"><polygon points="30,6 18,28 26,28 22,46 34,24 26,24" fill="#EAB308"/></svg>
+              </div>
+              <span>Electrical</span>
+            </button>
+
+            <button class="cat-btn" data-cat="Gardening" onclick="selectCat(this)">
+              <div class="cat-check-badge">✓</div>
+              <div class="cat-icon-wrap">
+                <svg viewBox="0 0 52 52" fill="none"><ellipse cx="26" cy="20" rx="14" ry="10" fill="#22C55E"/><ellipse cx="16" cy="26" rx="10" ry="7" fill="#16A34A"/><rect x="24" y="26" width="4" height="18" rx="2" fill="#65A30D"/></svg>
+              </div>
+              <span>Gardening</span>
+            </button>
+
+            <button class="cat-btn" data-cat="Cleaning" onclick="selectCat(this)">
+              <div class="cat-check-badge">✓</div>
+              <div class="cat-icon-wrap">
+                <svg viewBox="0 0 52 52" fill="none"><rect x="18" y="10" width="10" height="18" rx="3" fill="#0EA5E9"/><rect x="14" y="26" width="18" height="16" rx="4" fill="#0EA5E9"/><rect x="28" y="18" width="12" height="4" rx="2" fill="#38BDF8"/><circle cx="40" cy="16" r="3" fill="#38BDF8"/></svg>
+              </div>
+              <span>Cleaning</span>
+            </button>
+
+            <button class="cat-btn" data-cat="Painting" onclick="selectCat(this)">
+              <div class="cat-check-badge">✓</div>
+              <div class="cat-icon-wrap">
+                <svg viewBox="0 0 52 52" fill="none"><rect x="8" y="10" width="36" height="6" rx="2" fill="#A855F7"/><rect x="10" y="14" width="32" height="8" rx="3" fill="#9333EA"/><rect x="22" y="22" width="8" height="20" rx="2" fill="#7C3AED"/></svg>
+              </div>
+              <span>Painting</span>
+            </button>
+
+            <button class="cat-btn" data-cat="Carpentry" onclick="selectCat(this)">
+              <div class="cat-check-badge">✓</div>
+              <div class="cat-icon-wrap">
+                <svg viewBox="0 0 52 52" fill="none"><rect x="23" y="6" width="9" height="30" rx="4" fill="#92400E" transform="rotate(30 26 26)"/><rect x="12" y="8" width="16" height="9" rx="3" fill="#B45309" transform="rotate(30 26 26)"/></svg>
+              </div>
+              <span>Carpentry</span>
+            </button>
+
+            <button class="cat-btn" data-cat="Handyman" onclick="selectCat(this)">
+              <div class="cat-check-badge">✓</div>
+              <div class="cat-icon-wrap">
+                <svg viewBox="0 0 52 52" fill="none"><rect x="10" y="22" width="32" height="22" rx="4" fill="#EA580C"/><rect x="8" y="18" width="36" height="8" rx="3" fill="#C2410C"/><rect x="18" y="10" width="6" height="12" rx="2" fill="#EA580C"/><rect x="28" y="10" width="6" height="12" rx="2" fill="#EA580C"/></svg>
+              </div>
+              <span>Handyman</span>
+            </button>
+
+            <button class="cat-btn" data-cat="Appliance Repair" onclick="selectCat(this)">
+              <div class="cat-check-badge">✓</div>
+              <div class="cat-icon-wrap">
+                <svg viewBox="0 0 52 52" fill="none"><line x1="12" y1="12" x2="40" y2="40" stroke="#2563EB" stroke-width="6" stroke-linecap="round"/><line x1="40" y1="12" x2="12" y2="40" stroke="#2563EB" stroke-width="6" stroke-linecap="round"/><circle cx="12" cy="12" r="5" fill="#3B82F6"/><circle cx="40" cy="12" r="5" fill="#3B82F6"/><circle cx="12" cy="40" r="5" fill="#3B82F6"/><circle cx="40" cy="40" r="5" fill="#3B82F6"/></svg>
+              </div>
+              <span>Appliance Repair</span>
+            </button>
+
+            <button class="cat-btn" data-cat="Roofing" onclick="selectCat(this)">
+              <div class="cat-check-badge">✓</div>
+              <div class="cat-icon-wrap">
+                <svg viewBox="0 0 52 52" fill="none"><polygon points="26,6 6,24 12,24 12,46 40,46 40,24 46,24" fill="#1E3A5F"/><rect x="20" y="32" width="12" height="14" rx="2" fill="#2D5016" opacity="0.4"/></svg>
+              </div>
+              <span>Roofing</span>
+            </button>
+
+            <button class="cat-btn" data-cat="Other" onclick="selectCat(this)">
+              <div class="cat-check-badge">✓</div>
+              <div class="cat-icon-wrap">
+                <svg viewBox="0 0 52 52" fill="none"><circle cx="14" cy="26" r="5" fill="#94A3B8"/><circle cx="26" cy="26" r="5" fill="#94A3B8"/><circle cx="38" cy="26" r="5" fill="#94A3B8"/></svg>
+              </div>
+              <span>Other</span>
+            </button>
+
+          </div>
+
+          <!-- "Other" sub-services — shown only when the Other category is selected -->
+          <div id="otherServicesPanel" class="other-services-panel" style="display:none">
+            <div class="form-section-label" style="margin-top:20px">What kind of service do you need?</div>
+            <p class="section-hint">Pick any that apply — or type your own below. You can select more than one.</p>
+            <div class="other-svc-grid" id="otherSvcGrid">
+              <button type="button" class="other-svc-chip" data-svc="House Movers / Removals" onclick="selectOtherService(this)">🚚 House Movers / Removals</button>
+              <button type="button" class="other-svc-chip" data-svc="Pest Control" onclick="selectOtherService(this)">🐜 Pest Control</button>
+              <button type="button" class="other-svc-chip" data-svc="Locksmith" onclick="selectOtherService(this)">🔑 Locksmith</button>
+              <button type="button" class="other-svc-chip" data-svc="Pool & Spa Maintenance" onclick="selectOtherService(this)">🏊 Pool &amp; Spa Maintenance</button>
+              <button type="button" class="other-svc-chip" data-svc="Window Cleaning" onclick="selectOtherService(this)">🪟 Window Cleaning</button>
+              <button type="button" class="other-svc-chip" data-svc="Blinds & Curtains" onclick="selectOtherService(this)">🎪 Blinds &amp; Curtains</button>
+              <button type="button" class="other-svc-chip" data-svc="Chimney Sweep" onclick="selectOtherService(this)">🔥 Chimney Sweep</button>
+              <button type="button" class="other-svc-chip" data-svc="Security & Alarm Systems" onclick="selectOtherService(this)">🚨 Security &amp; Alarm Systems</button>
+              <button type="button" class="other-svc-chip" data-svc="Concrete & Paving" onclick="selectOtherService(this)">🧱 Concrete &amp; Paving</button>
+              <button type="button" class="other-svc-chip" data-svc="Rubbish & Skip Bin Removal" onclick="selectOtherService(this)">🗑️ Rubbish &amp; Skip Bin Removal</button>
+              <button type="button" class="other-svc-chip" data-svc="Furniture Assembly" onclick="selectOtherService(this)">🧰 Furniture Assembly</button>
+              <button type="button" class="other-svc-chip" data-svc="Building Inspection" onclick="selectOtherService(this)">🏗️ Building Inspection</button>
+              <button type="button" class="other-svc-chip" data-svc="Gasfitting" onclick="selectOtherService(this)">🔥 Gasfitting</button>
+              <button type="button" class="other-svc-chip" data-svc="Drainlaying" onclick="selectOtherService(this)">🕳️ Drainlaying</button>
+              <button type="button" class="other-svc-chip" data-svc="Tiling" onclick="selectOtherService(this)">🪟 Tiling</button>
+              <button type="button" class="other-svc-chip" data-svc="Flooring" onclick="selectOtherService(this)">🪵 Flooring</button>
+              <button type="button" class="other-svc-chip" data-svc="Fencing" onclick="selectOtherService(this)">🚪 Fencing</button>
+              <button type="button" class="other-svc-chip" data-svc="Tree Removal" onclick="selectOtherService(this)">🪚 Tree Removal</button>
+              <button type="button" class="other-svc-chip" data-svc="HVAC" onclick="selectOtherService(this)">❄️ HVAC / Air Con</button>
+              <button type="button" class="other-svc-chip" data-svc="Glazing" onclick="selectOtherService(this)">🪞 Glazing</button>
+            </div>
+
+            <div class="other-custom-row">
+              <input type="text" class="form-input" id="otherCustomInput" placeholder="Or type your own — e.g. Swimming Pool Builder, Concrete Cutting, CCTV Installation..."
+                onkeydown="if(event.key==='Enter'){event.preventDefault();addOtherCustomService();}"/>
+              <button type="button" class="btn-outline custom-svc-add-btn" onclick="addOtherCustomService()">+ Add</button>
+            </div>
+            <div class="other-custom-tags" id="otherCustomTags"></div>
+          </div>
+
+          <!-- Section 2: Describe -->
+          <div class="form-section-label" style="margin-top:28px">2. Describe your job</div>
+          <textarea id="jobDesc" class="form-textarea" placeholder="E.g. Leaking pipe under the kitchen sink. Need it fixed as soon as possible." oninput="updateDesc()"></textarea>
+          <div class="char-count"><span id="descCount">0</span>/500</div>
+          <div class="section-hint" id="descWordHint" style="margin-top:2px">Add at least 5 words so tradies understand the job.</div>
+
+          <!-- Section 3: Photos -->
+          <div class="form-section-label" style="margin-top:24px">3. Add photos <span class="optional-tag">(optional)</span></div>
+          <p class="section-hint">Photos help tradies understand the job better</p>
+          <label class="upload-box-single" style="cursor:pointer">
+            <input type="file" accept="image/png,image/jpeg,image/webp,image/gif" multiple style="display:none" onchange="handleJobPhotoUpload(this)"/>
+            <div class="ub-icon-svg">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z" stroke="#64748B" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="13" r="4" stroke="#64748B" stroke-width="1.5"/></svg>
+            </div>
+            <div class="ub-title">Upload Photos</div>
+            <div class="ub-sub">Drag and drop or click to upload<br>PNG, JPG up to 10MB each</div>
+          </label>
+          <div id="jobPhotoPreviews" class="job-photo-previews"></div>
+
+          <!-- Footer buttons -->
+          <div class="form-footer-btns">
+            <button class="btn-cancel" onclick="nav('home')">Cancel</button>
+            <button class="btn-next-loc" onclick="saveStep1()">Next: Location →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: SIDEBAR -->
+      <aside class="job-sidebar">
+        <div class="sidebar-card summary-card">
+          <div class="sc-header">
+            <div class="sc-header-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke="#0B6B35" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div class="sc-title">Job Summary</div>
+          </div>
+          <div class="sc-row">
+            <span class="sc-label">Category</span>
+            <span class="sc-val-cat">
+              <svg width="14" height="14" viewBox="0 0 52 52" fill="none"><rect x="6" y="22" width="40" height="10" rx="5" fill="#15803D"/><rect x="6" y="8" width="10" height="20" rx="5" fill="#15803D"/><rect x="36" y="32" width="10" height="14" rx="5" fill="#15803D"/></svg>
+              <span id="sumCat">Plumbing</span>
+            </span>
+          </div>
+          <div class="sc-divider"></div>
+          <div class="sc-row"><span class="sc-label">Description</span><span class="sc-val muted" id="sumDesc">Not provided yet</span></div>
+          <div class="sc-divider"></div>
+          <div class="sc-row"><span class="sc-label">Location</span><span class="sc-val muted" id="sumLoc">Not set</span></div>
+          <div class="sc-divider"></div>
+          <div class="sc-row"><span class="sc-label">Preferred Date</span><span class="sc-val muted" id="sumDate">Not set</span></div>
+          <div class="sc-divider"></div>
+          <div class="sc-row"><span class="sc-label">Budget</span><span class="sc-val muted">Not set</span></div>
+        </div>
+
+        <div class="sidebar-card howworks">
+          <div class="sc-header">
+            <div class="sc-header-icon hw-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke="#92400E" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div class="sc-title">How it works</div>
+          </div>
+          <div class="hw-step"><div class="hw-num">1</div><div><div class="hw-t">Post your job</div><div class="hw-s">Tell us what you need done</div></div></div>
+          <div class="hw-step"><div class="hw-num">2</div><div><div class="hw-t">Get matched</div><div class="hw-s">We'll connect you with trusted local tradies</div></div></div>
+          <div class="hw-step"><div class="hw-num">3</div><div><div class="hw-t">Compare &amp; choose</div><div class="hw-s">Review quotes, profiles and ratings</div></div></div>
+          <div class="hw-step"><div class="hw-num">4</div><div><div class="hw-t">Job done!</div><div class="hw-s">Pay securely and leave a review</div></div></div>
+        </div>
+
+        <div class="sidebar-card safehands">
+          <div class="sh-header">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2z" fill="#1E40AF"/></svg>
+            <div class="sh-title">You're in safe hands</div>
+          </div>
+          <div class="sh-body">
+            <div>
+              <div class="sh-item">✓ Verified &amp; reviewed tradies</div>
+              <div class="sh-item">✓ Secure payments</div>
+              <div class="sh-item">✓ NZ-based support</div>
+            </div>
+            <div class="nz-map-mini">
+              <svg viewBox="0 0 160 220" fill="none" xmlns="http://www.w3.org/2000/svg" opacity=".18">
+                <path d="M80 10 C60 15 40 30 35 50 C30 70 45 90 55 110 C65 130 60 155 65 175 C70 195 85 205 90 195 C95 185 88 165 92 145 C96 125 110 110 112 90 C114 70 100 45 95 30 C90 15 85 8 80 10Z" fill="#1E40AF"/>
+                <path d="M95 100 C105 95 120 90 125 100 C130 110 118 125 108 130 C98 135 90 128 95 118 C100 108 95 100 95 100Z" fill="#1E40AF"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Footer trust bar -->
+  <div class="trust-footer-bar">
+    <div class="tf-item"><span class="tf-icon">🛡</span><div><div class="tf-title">Verified Tradies</div><div class="tf-sub">Licensed &amp; Insured</div></div></div>
+    <div class="tf-item"><span class="tf-icon">⭐</span><div><div class="tf-title">5 Star Rated</div><div class="tf-sub">By Kiwis Like You</div></div></div>
+    <div class="tf-item"><span class="tf-icon">🔒</span><div><div class="tf-title">Secure Payments</div><div class="tf-sub">Safe &amp; Protected</div></div></div>
+    <div class="tf-item"><span class="tf-icon">💬</span><div><div class="tf-title">Fast Support</div><div class="tf-sub">Here When You Need</div></div></div>
+  </div>
+</section>
+
+<!-- ============================================================
+  JOB STEP 2 – YOUR DETAILS (login or register)
+============================================================ -->
+<section id="job-step2" class="page app-page">
+  <header class="app-header">
+    <div class="brand" onclick="nav('home')">
+      <div class="brand-logo"><img src="assets/logo.png" alt="KiwiFix"/></div>
+      <div><div class="brand-name">KiwiFix</div><div class="brand-tag">Trusted Trades. Right When You Need Us.</div></div>
+    </div>
+    <div class="header-stepper">
+      <div class="hs-item done">✓ Job Details</div>
+      <div class="hs-line done"></div>
+      <div class="hs-item active">2 Your Details</div>
+      <div class="hs-line"></div>
+      <div class="hs-item">3 Review &amp; Post</div>
+    </div>
+    <div class="header-right">
+    </div>
+  </header>
+
+  <div class="page-body">
+    <div class="details-layout">
+      <!-- LEFT: FORM -->
+      <div>
+        <h1 class="page-title">Your details</h1>
+        <p class="page-sub">Sign in or create an account to post your job and track responses.</p>
+
+        <!-- ===== UNIFIED SIGN IN / CONTINUE FORM ===== -->
+        <div id="formAuth" class="form-card">
+          <div class="form-section-label">1. Sign in or continue</div>
+          <p class="section-hint" style="margin-bottom:16px">Enter your email — we'll check if you already have an account and send you a one-time code. No password needed.</p>
+
+          <div class="field-group">
+            <label class="field-label">Email address</label>
+            <div class="otp-send-row">
+              <div class="input-icon-wrap flex1"><span class="inp-icon">✉️</span><input id="authEmail" class="form-input" placeholder="e.g. john@example.com" type="email"/></div>
+              <button class="btn-otp-send" id="btnContinueEmail" onclick="startAuth()">Continue →</button>
+            </div>
+            <div id="authEmailSentMsg" class="otp-success d-none">✓ Code sent! Check your email inbox. <span class="edit-link" onclick="editAuthEmail()">Edit email</span></div>
+          </div>
+
+          <!-- Existing customer: welcome back -->
+          <div id="authWelcomeBack" class="d-none" style="margin:14px 0">
+            <div class="login-welcome">
+              <div class="lw-avatar" id="authAvatar">?</div>
+              <div>
+                <div class="lw-name" id="authWelcomeName">Welcome back!</div>
+                <div class="lw-sub" id="authWelcomeSub"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- New customer: name fields -->
+          <div id="authNameFields" class="d-none form-row-2">
+            <div class="field-group">
+              <label class="field-label">First name</label>
+              <div class="input-icon-wrap"><span class="inp-icon">👤</span><input id="firstName" class="form-input" placeholder="e.g. John"/></div>
+            </div>
+            <div class="field-group">
+              <label class="field-label">Last name</label>
+              <div class="input-icon-wrap"><span class="inp-icon">👤</span><input id="lastName" class="form-input" placeholder="e.g. Smith"/></div>
+            </div>
+          </div>
+
+          <!-- OTP entry (shared by both cases) -->
+          <div id="authOtpRow" class="field-group d-none" style="margin-top:14px">
+            <label class="field-label">Enter 6-digit code</label>
+            <div class="otp-inputs-row" id="otpBoxesAuth">
+              <input class="otp-box" maxlength="1" oninput="moveOtpAuth(this,1)" onkeydown="otpKey(event,this)"/>
+              <input class="otp-box" maxlength="1" oninput="moveOtpAuth(this,2)" onkeydown="otpKey(event,this)"/>
+              <input class="otp-box" maxlength="1" oninput="moveOtpAuth(this,3)" onkeydown="otpKey(event,this)"/>
+              <input class="otp-box" maxlength="1" oninput="moveOtpAuth(this,4)" onkeydown="otpKey(event,this)"/>
+              <input class="otp-box" maxlength="1" oninput="moveOtpAuth(this,5)" onkeydown="otpKey(event,this)"/>
+              <input class="otp-box" maxlength="1" oninput="moveOtpAuth(this,6)" onkeydown="otpKey(event,this)"/>
+            </div>
+            <div id="otpErrorAuth" class="validation-toast d-none" style="margin-top:8px">⚠️ Incorrect code. Please try again.</div>
+            <div id="otpOkAuth" class="otp-success d-none" style="margin-top:8px">✓ Verified!</div>
+          </div>
+
+          <!-- Everything below only appears once verified -->
+          <div id="authVerifiedFields" class="d-none">
+            <div class="field-group">
+              <label class="field-label">Mobile number <span class="optional-tag">(optional — for contact only)</span></label>
+              <div class="input-icon-wrap"><span class="inp-icon">📞</span><input id="mobile" class="form-input" placeholder="e.g. 021 123 4567" type="tel" maxlength="13" oninput="formatMobile(this)"/></div>
+            </div>
+
+            <!-- Someone else toggle -->
+            <div class="optional-section" style="margin-top:20px">
+              <div class="opt-sec-header">
+                <div>
+                  <div class="opt-sec-title">2. Is someone else at the property? <span class="optional-tag">(Optional)</span></div>
+                  <div class="opt-sec-sub">If someone else will be there, please provide their details.</div>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" id="otherPersonToggle" onchange="toggleOtherPerson()"/>
+                  <span class="toggle-track"><span class="toggle-thumb"></span></span>
+                </label>
+              </div>
+              <div id="otherPersonFields" class="d-none" style="margin-top:14px">
+                <div class="form-row-2">
+                  <div class="field-group"><label class="field-label">Contact name</label>
+                    <div class="input-icon-wrap"><span class="inp-icon">👤</span><input id="otherName" class="form-input" placeholder="e.g. Jane Smith"/></div></div>
+                  <div class="field-group"><label class="field-label">Contact number</label>
+                    <div class="input-icon-wrap"><span class="inp-icon">📞</span><input id="otherPhone" class="form-input" placeholder="e.g. 021 987 6543" type="tel" maxlength="13" oninput="formatMobile(this)"/></div></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Access details -->
+            <div class="optional-section">
+              <div class="opt-sec-title">3. Access details</div>
+              <div class="opt-sec-sub">Help the tradie find and access the job.</div>
+              <div style="margin-top:14px">
+                <div class="field-group">
+                  <label class="field-label">Job address <span style="color:#ef4444">*</span></label>
+                  <div class="field-group" style="position:relative; margin-bottom:0">
+                    <div class="input-icon-wrap">
+                      <span class="inp-icon">📍</span>
+                      <input id="jobAddress" class="form-input" placeholder="e.g. 23 River Road, Hamilton" autocomplete="off" oninput="addressSearch(this)"/>
+                    </div>
+                    <div id="addressDropdownNew" class="address-dropdown d-none"></div>
+                  </div>
+                </div>
+                <div class="form-row-2">
+                  <div class="field-group"><label class="field-label">Property / Unit Number</label>
+                    <div class="input-icon-wrap"><span class="inp-icon">🏠</span><input id="unitNum" class="form-input" placeholder="e.g. 12B"/></div></div>
+                  <div class="field-group"><label class="field-label">Gate / Door Code</label>
+                    <div class="input-icon-wrap"><span class="inp-icon">🔒</span><input id="gateCode" class="form-input" placeholder="e.g. 1234"/></div></div>
+                </div>
+                <div class="field-group"><label class="field-label">Parking instructions</label>
+                  <div class="input-icon-wrap"><span class="inp-icon">🚗</span><input id="parking" class="form-input" placeholder="e.g. Street parking available out front"/></div></div>
+                <div class="field-group"><label class="field-label">Additional notes</label>
+                  <div class="input-icon-wrap"><span class="inp-icon">📝</span><input id="notes" class="form-input" placeholder="e.g. Small dog at home, please call on arrival"/></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="otpGateMsg" class="otp-gate-msg">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#92400E" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            Please verify your email address above before continuing.
+          </div>
+          <div class="form-nav-row">
+            <button class="btn-back" onclick="nav('job-step1')">← Back</button>
+            <button class="btn-next btn-next-locked" id="btnNextAuth" onclick="saveStep2()" disabled>Next: Review &amp; Post →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: TRUST SIDEBAR -->
+      <aside class="trust-sidebar">
+        <div class="trust-item-card">
+          <div class="trust-icon-circle green">✓</div>
+          <div><div class="trust-item-title">Verified &amp; Trusted</div>
+          <div class="trust-item-sub">All tradies are background checked and verified.</div></div>
+        </div>
+        <div class="trust-item-card">
+          <div class="trust-icon-circle blue">🔒</div>
+          <div><div class="trust-item-title">Secure &amp; Private</div>
+          <div class="trust-item-sub">Your details are encrypted and never shared.</div></div>
+        </div>
+        <div class="trust-item-card">
+          <div class="trust-icon-circle gray">🎧</div>
+          <div><div class="trust-item-title">Kiwi Support</div>
+          <div class="trust-item-sub">Local support team here to help you every step of the way.</div></div>
+        </div>
+        <div class="nz-map-card">
+          <svg viewBox="0 0 160 240" fill="none" xmlns="http://www.w3.org/2000/svg" width="120">
+            <path d="M80 10 C58 16 36 34 32 56 C28 78 44 100 54 122 C64 144 58 168 62 190 C66 212 82 224 88 212 C94 200 86 178 90 158 C94 138 112 120 114 98 C116 76 100 50 94 32 C88 14 84 7 80 10Z" fill="#15803D" opacity=".3"/>
+            <path d="M97 105 C108 100 124 94 128 106 C132 118 119 134 108 140 C97 146 88 138 94 126 C100 114 97 105 97 105Z" fill="#15803D" opacity=".3"/>
+            <circle cx="70" cy="70" r="5" fill="#0B6B35"/>
+            <circle cx="85" cy="110" r="4" fill="#0B6B35"/>
+            <circle cx="65" cy="145" r="4" fill="#22C55E"/>
+            <circle cx="92" cy="160" r="3" fill="#F59E0B"/>
+          </svg>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  JOB STEP 3 – REVIEW YOUR JOB
+============================================================ -->
+<section id="job-step3" class="page app-page">
+  <header class="app-header">
+    <div class="brand" onclick="nav('home')">
+      <div class="brand-logo"><img src="assets/logo.png" alt="KiwiFix"/></div>
+      <div><div class="brand-name">KiwiFix</div><div class="brand-tag">Trusted tradies. Right when you need us.</div></div>
+    </div>
+    <div class="header-stepper">
+      <div class="hs-item done">✓ Job Details</div>
+      <div class="hs-line done"></div>
+      <div class="hs-item done">✓ Your Details</div>
+      <div class="hs-line done"></div>
+      <div class="hs-item active">3 Review</div>
+      <div class="hs-line"></div>
+      <div class="hs-item">4 Posted</div>
+    </div>
+  </header>
+
+  <div class="page-body" style="max-width:1200px">
+    <div class="review-layout">
+      <!-- LEFT -->
+      <div>
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:24px">
+          <div>
+            <h1 class="page-title" style="margin-bottom:4px">Review your job</h1>
+            <p class="page-sub">Please check your details before posting. You can edit any section if needed.</p>
+          </div>
+          <button class="btn-edit-top" onclick="nav('job-step1')">✏️ Edit</button>
+        </div>
+
+        <!-- Job Details section -->
+        <div class="review-card">
+          <div class="review-card-header">
+            <div style="display:flex;align-items:center;gap:12px">
+              <div class="review-card-icon">🔧</div>
+              <div class="review-card-title">Job details</div>
+            </div>
+          </div>
+          <div class="review-card-body">
+            <div class="rv-row"><div class="rv-key">Service</div><div class="rv-val" id="rvService">Plumbing › Leak / Pipe Leak</div></div>
+            <div class="rv-row"><div class="rv-key">Description</div><div class="rv-val" id="rvDesc">Water is leaking under the kitchen sink. Need it fixed as soon as possible.</div></div>
+            <div class="rv-row" id="rvPhotosRow" style="display:none"><div class="rv-key">Photos</div>
+              <div class="rv-val">
+                <div class="photo-preview-row" id="rvPhotos"></div>
+              </div>
+            </div>
+            <div class="rv-row"><div class="rv-key">Location</div><div class="rv-val" id="rvLoc">📍 Dinsdale, Hamilton, Waikato</div></div>
+            <div class="rv-row"><div class="rv-key">When needed</div><div class="rv-val"><span class="emergency-pill">⚡ Emergency (ASAP)</span></div></div>
+            <div class="rv-row"><div class="rv-key">Preferred contact</div><div class="rv-val" id="rvContact">📞 Phone Call</div></div>
+          </div>
+        </div>
+
+        <!-- Your Details section -->
+        <div class="review-card" style="margin-top:16px">
+          <div class="review-card-header">
+            <div style="display:flex;align-items:center;gap:12px">
+              <div class="review-card-icon">👤</div>
+              <div class="review-card-title">Your details</div>
+            </div>
+            <button class="btn-edit-sm" onclick="nav('job-step2')">Edit</button>
+          </div>
+          <div class="review-card-body">
+            <div class="rv-row"><div class="rv-key">Name</div><div class="rv-val" id="rvName">Rajee Gangadaran</div></div>
+            <div class="rv-row"><div class="rv-key">Mobile</div><div class="rv-val" id="rvMobile">021 123 4567</div></div>
+            <div class="rv-row"><div class="rv-key">Email</div><div class="rv-val" id="rvEmail">rajee.g@example.com</div></div>
+            <div class="rv-row"><div class="rv-key">Someone else at the property?</div><div class="rv-val" id="rvOther">No</div></div>
+            <div class="rv-row"><div class="rv-key">Access details</div><div class="rv-val" id="rvAccess">Unit 12B, Gate code 1234.<br>Street parking available in front of the house.<br>Small dog at home. Please call when you arrive.</div></div>
+            <div class="rv-row"><div class="rv-key">Preferred contact</div><div class="rv-val">📞 Phone Call</div></div>
+          </div>
+        </div>
+
+        <button class="post-job-btn" onclick="postJob()">
+          <svg width="20" height="20" fill="white" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+          Post My Job
+        </button>
+        <div class="post-hint">🔒 You can edit your job details after posting</div>
+      </div>
+
+      <!-- RIGHT SIDEBAR -->
+      <aside>
+        <div class="sidebar-card">
+          <div class="sc-title">Your job will be seen by<br>verified local tradies</div>
+          <div class="rv-trust-list">
+            <div class="rv-trust-item">✓ NZ licensed &amp; insured traders</div>
+            <div class="rv-trust-item">✓ Background checked</div>
+            <div class="rv-trust-item">✓ Rated by other Kiwis</div>
+            <div class="rv-trust-item">✓ Fast response</div>
+          </div>
+          <div class="nz-skyline-mini">
+            <svg viewBox="0 0 260 120" width="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0" y="90" width="260" height="30" fill="#e8f5e9"/>
+              <rect x="20" y="60" width="20" height="30" fill="#c8e6c9"/>
+              <rect x="50" y="70" width="15" height="20" fill="#a5d6a7"/>
+              <rect x="70" y="55" width="25" height="35" fill="#81c784"/>
+              <rect x="100" y="40" width="10" height="50" fill="#4caf50" rx="2"/>
+              <rect x="114" y="50" width="4" height="40" fill="#388e3c"/>
+              <rect x="130" y="65" width="20" height="25" fill="#a5d6a7"/>
+              <rect x="158" y="58" width="18" height="32" fill="#c8e6c9"/>
+              <rect x="185" y="68" width="22" height="22" fill="#81c784"/>
+              <circle cx="90" cy="75" r="15" fill="#a5d6a7" opacity=".5"/>
+              <circle cx="160" cy="72" r="12" fill="#c8e6c9" opacity=".5"/>
+            </svg>
+          </div>
+        </div>
+        <div class="sidebar-card" style="margin-top:16px">
+          <div class="sc-title">ℹ What happens next?</div>
+          <div class="what-next">
+            <div class="wn-item"><span class="wn-icon">🔍</span><div><div class="wn-t">We'll find available tradies</div><div class="wn-s">We match your job with trusted tradies in your area.</div></div></div>
+            <div class="wn-item"><span class="wn-icon">🔔</span><div><div class="wn-t">Tradies will respond</div><div class="wn-s">You'll receive responses in the app.</div></div></div>
+            <div class="wn-item"><span class="wn-icon">💬</span><div><div class="wn-t">Chat &amp; choose</div><div class="wn-s">Chat with interested tradies and choose the best fit.</div></div></div>
+            <div class="wn-item"><span class="wn-icon">✅</span><div><div class="wn-t">Job gets done!</div><div class="wn-s">You and the tradie handle the job directly.</div></div></div>
+          </div>
+        </div>
+        <div class="sidebar-card info-safe-card" style="margin-top:16px">
+          <div class="is-icon">🔒</div>
+          <div class="is-title">Your information is safe</div>
+          <div class="is-body">We never share your personal details. Only tradies you connect with can see your information.</div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  JOB STEP 4 – POSTED SUCCESS
+============================================================ -->
+<section id="job-step4" class="page app-page">
+  <header class="app-header">
+    <div class="brand" onclick="nav('home')">
+      <div class="brand-logo"><img src="assets/logo.png" alt="KiwiFix"/></div>
+      <div><div class="brand-name">KiwiFix</div><div class="brand-tag">Trusted tradies. Right when you need us.</div></div>
+    </div>
+    <div class="header-stepper">
+      <div class="hs-item done">✓ Job Details</div>
+      <div class="hs-line done"></div>
+      <div class="hs-item done">✓ Your Details</div>
+      <div class="hs-line done"></div>
+      <div class="hs-item done">✓ Review</div>
+      <div class="hs-line done"></div>
+      <div class="hs-item active">4 Posted</div>
+    </div>
+  </header>
+
+  <div class="page-body" style="max-width:1200px">
+    <div class="posted-layout">
+      <!-- LEFT -->
+      <div>
+        <div class="posted-success-block">
+          <div class="posted-check">✓</div>
+          <h1 class="posted-title">Your job has been posted!</h1>
+          <p class="posted-sub">We've notified available tradies in your area.</p>
+        </div>
+
+        <div class="form-card" style="margin-top:24px">
+          <div class="pn-title">🔔 What happens next?</div>
+          <div class="posted-steps">
+            <div class="ps-item"><div class="ps-icon">🔍</div><div><div class="ps-t">We're finding the right tradies</div><div class="ps-s">We're matching your job with trusted and available tradies.</div></div></div>
+            <div class="ps-item"><div class="ps-icon">💬</div><div><div class="ps-t">Tradies will respond</div><div class="ps-s">You'll receive responses and quotes in the app.</div></div></div>
+            <div class="ps-item"><div class="ps-icon">🗨</div><div><div class="ps-t">Chat &amp; choose</div><div class="ps-s">Chat with interested tradies and choose the best fit.</div></div></div>
+            <div class="ps-item"><div class="ps-icon">✅</div><div><div class="ps-t">Job gets done!</div><div class="ps-s">You and the tradie handle the job directly.</div></div></div>
+          </div>
+        </div>
+
+        <div class="notif-banner">
+          🔔 <strong>Keep an eye on your notifications</strong><br>
+          <span>We'll let you know as soon as tradies respond to your job.</span>
+        </div>
+
+        <div class="posted-btn-row">
+          <button class="btn-next" onclick="nav('finding-tradies')" style="flex:1.5">View My Jobs</button>
+          <button class="btn-back" onclick="nav('home')" style="flex:1">Back to Home</button>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div>
+        <div class="kiwi-scene">
+          <!-- Kiwi mascot SVG -->
+          <svg viewBox="0 0 300 220" width="280" xmlns="http://www.w3.org/2000/svg">
+            <!-- Background city -->
+            <rect x="0" y="140" width="300" height="80" fill="#e8f5e9" rx="16"/>
+            <rect x="20" y="100" width="30" height="40" fill="#c8e6c9" rx="2"/>
+            <rect x="60" y="115" width="22" height="25" fill="#a5d6a7" rx="2"/>
+            <rect x="88" y="90" width="28" height="50" fill="#81c784" rx="2"/>
+            <rect x="122" y="75" width="12" height="65" fill="#4caf50" rx="2"/>
+            <rect x="135" y="82" width="5" height="58" fill="#388e3c" rx="1"/>
+            <rect x="155" y="108" width="25" height="32" fill="#a5d6a7" rx="2"/>
+            <rect x="188" y="95" width="22" height="45" fill="#c8e6c9" rx="2"/>
+            <rect x="220" y="110" width="28" height="30" fill="#81c784" rx="2"/>
+            <!-- Kiwi van -->
+            <rect x="120" y="155" width="110" height="40" fill="white" rx="10" stroke="#e2e8f0" stroke-width="1"/>
+            <rect x="125" y="165" width="50" height="22" fill="#e8f5e9" rx="6"/>
+            <text x="185" y="180" font-size="10" fill="#0B6B35" font-weight="800" font-family="Inter,sans-serif">KiwiFix</text>
+            <circle cx="145" cy="196" r="8" fill="#374151"/>
+            <circle cx="145" cy="196" r="4" fill="#9ca3af"/>
+            <circle cx="215" cy="196" r="8" fill="#374151"/>
+            <circle cx="215" cy="196" r="4" fill="#9ca3af"/>
+            <!-- Kiwi bird body -->
+            <ellipse cx="90" cy="145" rx="40" ry="30" fill="#5B8A3C"/>
+            <circle cx="90" cy="110" r="26" fill="#5B8A3C"/>
+            <!-- Hard hat -->
+            <ellipse cx="90" cy="88" rx="28" ry="10" fill="#0B6B35"/>
+            <rect x="72" y="83" width="36" height="8" fill="#0B6B35" rx="4"/>
+            <!-- Beak -->
+            <path d="M 68 113 Q 30 110 26 118 Q 30 126 68 122 Z" fill="#C47B3C"/>
+            <!-- Eye -->
+            <circle cx="72" cy="104" r="6" fill="white"/>
+            <circle cx="72" cy="104" r="3.5" fill="#1a1a1a"/>
+            <circle cx="71" cy="103" r="1" fill="white"/>
+            <!-- Clipboard -->
+            <rect x="105" y="108" width="28" height="35" fill="white" rx="4" stroke="#e2e8f0" stroke-width="1"/>
+            <rect x="114" y="104" width="10" height="6" fill="#94a3b8" rx="2"/>
+            <rect x="109" y="118" width="20" height="2" fill="#e2e8f0" rx="1"/>
+            <rect x="109" y="124" width="15" height="2" fill="#e2e8f0" rx="1"/>
+            <rect x="109" y="130" width="18" height="2" fill="#e2e8f0" rx="1"/>
+            <!-- Thumbs up -->
+            <text x="135" y="108" font-size="22">👍</text>
+            <!-- Legs -->
+            <rect x="78" y="172" width="7" height="14" rx="3" fill="#C47B3C"/>
+            <rect x="94" y="172" width="7" height="14" rx="3" fill="#C47B3C"/>
+          </svg>
+        </div>
+
+        <div class="job-summary-card">
+          <div class="jsc-title">Job summary</div>
+          <div class="jsc-row"><span class="jsc-icon">🔧</span><span class="jsc-key">Service</span><span class="jsc-val" id="sumService2">Plumbing › Leak / Pipe Leak</span></div>
+          <div class="jsc-row"><span class="jsc-icon">📝</span><span class="jsc-key">Description</span><span class="jsc-val" id="sumDesc2">Water is leaking under the kitchen sink.</span></div>
+          <div class="jsc-row"><span class="jsc-icon">📍</span><span class="jsc-key">Location</span><span class="jsc-val" id="sumLoc2">Dinsdale, Hamilton, Waikato</span></div>
+          <div class="jsc-row"><span class="jsc-icon">📅</span><span class="jsc-key">When needed</span><span class="jsc-val"><span class="emergency-pill sm">Emergency (ASAP)</span></span></div>
+          <div class="jsc-row"><span class="jsc-icon">📞</span><span class="jsc-key">Preferred contact</span><span class="jsc-val">Phone Call</span></div>
+          <div class="tip-inline" style="margin-top:14px">
+            <span>💡</span>
+            <div><div style="font-weight:700;color:#713F12">Tip</div><div style="color:#78350F">Response time is usually faster for emergency jobs. We'll notify you as soon as a tradie responds.</div></div>
+          </div>
+          <div class="job-id-row">Job ID: <span id="jobId">KF-2024-05-24-00123</span> 📋</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  FINDING TRADIES
+============================================================ -->
+<section id="finding-tradies" class="page app-page">
+  <header class="app-header">
+    <div class="brand" onclick="nav('home')">
+      <div class="brand-logo"><img src="assets/logo.png" alt="KiwiFix"/></div>
+      <div><div class="brand-name">KiwiFix</div></div>
+    </div>
+    <div class="header-stepper">
+      <div class="hs-item done">✓ Job Details</div>
+      <div class="hs-line done"></div>
+      <div class="hs-item done">✓ Your Details</div>
+      <div class="hs-line done"></div>
+      <div class="hs-item done">✓ Review</div>
+      <div class="hs-line done"></div>
+      <div class="hs-item active">4 Posted</div>
+    </div>
+    <div></div>
+  </header>
+  <div class="finding-center">
+    <!-- Kiwi with binoculars -->
+    <svg viewBox="0 0 260 200" width="260" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:28px">
+      <rect x="0" y="150" width="260" height="50" fill="#e8f5e9" rx="10" opacity=".5"/>
+      <rect x="20" y="120" width="22" height="30" fill="#c8e6c9" rx="2"/>
+      <rect x="52" y="128" width="18" height="22" fill="#a5d6a7" rx="2"/>
+      <rect x="80" y="108" width="25" height="42" fill="#81c784" rx="2"/>
+      <rect x="175" y="115" width="20" height="35" fill="#c8e6c9" rx="2"/>
+      <rect x="205" y="108" width="28" height="42" fill="#a5d6a7" rx="2"/>
+      <!-- Map pins -->
+      <text x="48" y="120" font-size="16">📍</text>
+      <text x="118" y="100" font-size="16">📍</text>
+      <text x="158" y="112" font-size="16">📍</text>
+      <!-- Kiwi body -->
+      <ellipse cx="130" cy="135" rx="42" ry="32" fill="#4a7a2c"/>
+      <circle cx="130" cy="96" r="30" fill="#5B8A3C"/>
+      <!-- Binoculars -->
+      <rect x="95" y="88" width="20" height="14" fill="#374151" rx="6"/>
+      <rect x="117" y="88" width="20" height="14" fill="#374151" rx="6"/>
+      <rect x="113" y="91" width="6" height="8" fill="#1f2937" rx="1"/>
+      <circle cx="105" cy="95" r="6" fill="#1d4ed8" opacity=".7"/>
+      <circle cx="127" cy="95" r="6" fill="#1d4ed8" opacity=".7"/>
+      <!-- Hard hat -->
+      <ellipse cx="130" cy="72" rx="30" ry="10" fill="#0B6B35"/>
+      <rect x="108" y="67" width="44" height="8" fill="#0B6B35" rx="4"/>
+      <!-- Eye -->
+      <circle cx="115" cy="98" r="5" fill="white"/>
+      <circle cx="115" cy="98" r="3" fill="#1a1a1a"/>
+      <!-- Beak -->
+      <path d="M 104 103 Q 68 101 64 109 Q 68 117 104 113 Z" fill="#C47B3C"/>
+      <!-- Legs -->
+      <rect x="118" y="165" width="7" height="16" rx="3" fill="#C47B3C"/>
+      <rect x="134" y="165" width="7" height="16" rx="3" fill="#C47B3C"/>
+    </svg>
+
+    <h1 class="finding-title">Finding the best tradies for you...</h1>
+    <p class="finding-sub">This usually takes 5–10 seconds</p>
+
+    <div class="search-checklist">
+      <div class="sc-item done" id="sc1"><div class="sc-dot done">✓</div> Searching licensed plumbers...</div>
+      <div class="sc-item done" id="sc2"><div class="sc-dot done">✓</div> Looking within 10 km...</div>
+      <div class="sc-item done" id="sc3"><div class="sc-dot done">✓</div> Checking availability...</div>
+      <div class="sc-item done" id="sc4"><div class="sc-dot done">✓</div> Matching based on ratings...</div>
+      <div class="sc-item done" id="sc5"><div class="sc-dot done">✓</div> Almost done!</div>
+    </div>
+
+    <div class="finding-note">
+      🛡 We'll notify you as soon as tradies are ready.<br>
+      You'll also get a notification in the app.
+    </div>
+    <button class="btn-next" style="margin-top:28px;width:240px" onclick="nav('top-tradies')">View Matched Tradies →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+  TOP TRADIES
+============================================================ -->
+<section id="top-tradies" class="page app-page">
+  <header class="app-header">
+    <div class="brand" onclick="nav('home')">
+      <div class="brand-logo"><img src="assets/logo.png" alt="KiwiFix"/></div>
+      <div><div class="brand-name">KiwiFix</div></div>
+    </div>
+    <div class="header-stepper">
+      <div class="hs-item done">✓ Job Details</div>
+      <div class="hs-line done"></div>
+      <div class="hs-item done">✓ Your Details</div>
+      <div class="hs-line done"></div>
+      <div class="hs-item done">✓ Review</div>
+      <div class="hs-line done"></div>
+      <div class="hs-item active">4 Posted</div>
+    </div>
+    <div></div>
+  </header>
+  <div class="page-body" style="max-width:900px">
+    <h1 class="page-title" style="margin-bottom:4px">Top 3 tradies for your job</h1>
+    <p class="page-sub" style="margin-bottom:8px">Available now and ready to help.</p>
+    <div id="match-keywords-banner" class="match-keywords-banner" style="display:none"></div>
+    <div id="registered-match-banner" class="registered-match-banner"></div>
+
+    <div class="tradie-list">
+      <!-- Tradie 1 -->
+      <div class="tradie-card-item best">
+        <div class="best-badge-wrap"><span class="best-badge">🏅 Best match</span></div>
+        <div class="tci-main">
+          <div class="tci-avatar" style="background:linear-gradient(135deg,#0B6B35,#22C55E)">JS</div>
+          <div class="tci-info">
+            <div class="tci-name-row">
+              <span class="tci-name">John Smith Plumbing</span>
+              <span class="verified-tick">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2z" fill="#0B6B35"/><path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Verified
+              </span>
+            </div>
+            <div class="tci-badges">
+              <span class="licensed-pill">✓ Licensed</span>
+              <span class="insured-pill">✓ Insured</span>
+            </div>
+            <div class="tci-meta">
+              <span>🗓 12 years experience</span>
+              <span>📍 8 mins away</span>
+              <span class="avail-now">● Available now</span>
+            </div>
+            <div class="tci-price">Call-out from <strong>$120</strong></div>
+          </div>
+        </div>
+        <div class="tci-actions">
+          <button class="btn-outline" onclick="nav('tradie-profile')">View Profile</button>
+          <button class="btn-green-sm" onclick="nav('job-responses')">Invite</button>
+        </div>
+      </div>
+
+      <!-- Tradie 2 -->
+      <div class="tradie-card-item">
+        <div class="tci-main">
+          <div class="tci-avatar" style="background:linear-gradient(135deg,#1d4ed8,#60a5fa)">MP</div>
+          <div class="tci-info">
+            <div class="tci-name-row">
+              <span class="tci-name">Mike's Plumbing</span>
+              <span class="verified-tick">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2z" fill="#0B6B35"/><path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Verified
+              </span>
+            </div>
+            <div class="tci-badges">
+              <span class="licensed-pill">✓ Licensed</span>
+              <span class="insured-pill">✓ Insured</span>
+            </div>
+            <div class="tci-meta">
+              <span>🗓 10 years experience</span>
+              <span>📍 15 mins away</span>
+              <span class="avail-soon">● Available in 30 mins</span>
+            </div>
+            <div class="tci-price">Call-out from <strong>$110</strong></div>
+          </div>
+        </div>
+        <div class="tci-actions">
+          <button class="btn-outline" onclick="nav('tradie-profile')">View Profile</button>
+          <button class="btn-green-sm" onclick="nav('job-responses')">Invite</button>
+        </div>
+      </div>
+
+      <!-- Tradie 3 -->
+      <div class="tradie-card-item">
+        <div class="tci-main">
+          <div class="tci-avatar" style="background:linear-gradient(135deg,#7c3aed,#a78bfa)">DP</div>
+          <div class="tci-info">
+            <div class="tci-name-row">
+              <span class="tci-name">David's Plumbing</span>
+              <span class="verified-tick">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2z" fill="#0B6B35"/><path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Verified
+              </span>
+            </div>
+            <div class="tci-badges">
+              <span class="licensed-pill">✓ Licensed</span>
+            </div>
+            <div class="tci-meta">
+              <span>🗓 15 years experience</span>
+              <span>📍 20 mins away</span>
+              <span class="avail-soon">● Available in 30 mins</span>
+            </div>
+            <div class="tci-price">Call-out from <strong>$130</strong></div>
+          </div>
+        </div>
+        <div class="tci-actions">
+          <button class="btn-outline" onclick="nav('tradie-profile')">View Profile</button>
+          <button class="btn-green-sm" onclick="nav('job-responses')">Invite</button>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:18px">
+      <button style="background:none;border:none;color:var(--green);font-size:14px;font-weight:700;cursor:pointer">Show more tradies (12) ▾</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  TRADIE PROFILE
+============================================================ -->
+<section id="tradie-profile" class="page app-page">
+  <header class="app-header">
+    <button class="btn-back-header" onclick="nav('top-tradies')">← Back</button>
+    <div class="brand" onclick="nav('home')" style="margin:0 auto">
+      <div class="brand-logo"><img src="assets/logo.png" alt="KiwiFix"/></div>
+      <div><div class="brand-name">KiwiFix</div></div>
+    </div>
+    <div class="header-stepper">
+      <div class="hs-item done">✓ Job Details</div>
+      <div class="hs-line done"></div>
+      <div class="hs-item done">✓ Your Details</div>
+      <div class="hs-line done"></div>
+      <div class="hs-item done">✓ Review</div>
+      <div class="hs-line done"></div>
+      <div class="hs-item done">✓ Posted</div>
+    </div>
+  </header>
+  <div class="page-body" style="max-width:800px">
+    <div class="profile-card">
+      <div class="profile-top">
+        <div class="profile-avatar" style="background:linear-gradient(135deg,#0B6B35,#22C55E)">JS</div>
+        <div style="flex:1">
+          <div class="profile-name">John Smith Plumbing</div>
+          <div class="profile-badges" style="margin-bottom:6px">
+            <span class="verified-tick"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2z" fill="#0B6B35"/><path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Verified</span>
+            <span class="verify-badge blue">🪪 Identity Verified</span>
+            <span class="verify-badge green">🛡 NZ Licensed</span>
+            <span class="verify-badge gray">✓ Insured</span>
+          </div>
+          <!-- Phone number shown so user can call directly -->
+          <div class="profile-phone-row">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" fill="#0B6B35"/></svg>
+            <a href="tel:+6421555123" class="profile-phone-num">021 555 0123</a>
+            <span class="profile-phone-hint">Tap to call</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px">
+          <button class="icon-btn">🤍</button>
+          <button class="icon-btn">↗</button>
+        </div>
+      </div>
+
+      <div class="profile-stats-grid">
+        <div class="stat-box"><div class="stat-val">12</div><div class="stat-lbl">Years experience</div></div>
+        <div class="stat-box"><div class="stat-val">532</div><div class="stat-lbl">Jobs completed</div></div>
+        <div class="stat-box"><div class="stat-val">100%</div><div class="stat-lbl">Response rate</div></div>
+        <div class="stat-box"><div class="stat-val">8 mins</div><div class="stat-lbl">away</div></div>
+      </div>
+
+      <div class="profile-section">
+        <h4 class="ps-title">About John</h4>
+        <p style="font-size:14px;color:#374151;line-height:1.6">Hi I'm John, I have over 12 years of experience in all aspects of plumbing. I'm reliable, tidy and always happy to help.</p>
+      </div>
+
+      <div class="profile-section">
+        <h4 class="ps-title">Services</h4>
+        <div class="services-grid">
+          <div class="svc-item">✓ General plumbing</div>
+          <div class="svc-item">✓ Hot water cylinders</div>
+          <div class="svc-item">✓ Leak detection &amp; repair</div>
+          <div class="svc-item">✓ Drain clearing</div>
+          <div class="svc-item">✓ Basin/tap replacements</div>
+          <div class="svc-item">✓ Gas fitting</div>
+        </div>
+      </div>
+
+      <div class="profile-section">
+        <h4 class="ps-title">Recent work</h4>
+        <div class="work-photos">
+          <div class="work-photo" style="background:linear-gradient(135deg,#e0f2fe,#bfdbfe)"></div>
+          <div class="work-photo" style="background:linear-gradient(135deg,#d1fae5,#a7f3d0)"></div>
+          <div class="work-photo" style="background:linear-gradient(135deg,#fce7f3,#fbcfe8)"></div>
+          <div class="work-photo" style="background:#f1f5f9;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:#374151">+6</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="profile-action-bar">
+      <button class="pa-chat" onclick="">💬 Chat</button>
+      <button class="pa-call">📞 Call</button>
+      <button class="pa-invite" onclick="nav('job-responses')">📋 Invite / Book</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  JOB RESPONSES
+============================================================ -->
+<section id="job-responses" class="page app-page">
+  <header class="app-header">
+    <div class="brand" onclick="nav('home')">
+      <div class="brand-logo"><img src="assets/logo.png" alt="KiwiFix"/></div>
+      <div><div class="brand-name">KiwiFix</div></div>
+    </div>
+    <div class="header-stepper">
+      <div class="hs-item done">✓ Job Details</div>
+      <div class="hs-line done"></div>
+      <div class="hs-item done">✓ Your Details</div>
+      <div class="hs-line done"></div>
+      <div class="hs-item done">✓ Review</div>
+      <div class="hs-line done"></div>
+      <div class="hs-item done">✓ Posted</div>
+    </div>
+    <div></div>
+  </header>
+  <div class="page-body" style="max-width:800px">
+    <div style="text-align:center;margin-bottom:28px">
+      <div class="posted-check" style="margin:0 auto 16px">✓</div>
+      <h1 class="page-title">Your job has been posted!</h1>
+      <p class="page-sub">We've notified tradies in your area. You'll be notified here as they respond.</p>
+    </div>
+
+    <div class="responses-count">Responses (2)</div>
+
+    <div class="response-card">
+      <div class="resp-avatar" style="background:linear-gradient(135deg,#0B6B35,#22C55E)">JS</div>
+      <div style="flex:1">
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+          <div class="tci-name">John Smith Plumbing</div>
+          <span class="verified-tick"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2z" fill="#0B6B35"/><path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Verified</span>
+          <span class="licensed-pill">✓ Licensed</span>
+          <span class="avail-now">● Available now</span>
+        </div>
+        <div class="resp-msg">"Hi Rajee, I can be there in about 20 minutes. Happy to help!"</div>
+        <div class="resp-actions">
+          <button class="btn-outline" onclick="nav('tradie-profile')">View Profile</button>
+          <button class="btn-green-sm" onclick="nav('job-in-progress')">Chat</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="response-card">
+      <div class="resp-avatar" style="background:linear-gradient(135deg,#1d4ed8,#60a5fa)">MP</div>
+      <div style="flex:1">
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+          <div class="tci-name">Mike's Plumbing</div>
+          <span class="verified-tick"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2z" fill="#0B6B35"/><path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Verified</span>
+          <span class="licensed-pill">✓ Licensed</span>
+          <span class="avail-soon">● Available in 30 mins</span>
+        </div>
+        <div class="resp-msg">"Hi, I'm available this afternoon and can help with your leak."</div>
+        <div class="resp-actions">
+          <button class="btn-outline" onclick="nav('tradie-profile')">View Profile</button>
+          <button class="btn-green-sm" onclick="nav('job-in-progress')">Chat</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="keep-looking-banner">
+      🔔 <strong>We'll keep looking.</strong> We'll continue finding more tradies and notify you when others respond.
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  JOB IN PROGRESS
+============================================================ -->
+<section id="job-in-progress" class="page app-page">
+  <header class="app-header">
+    <button class="btn-back-header" onclick="nav('job-responses')">← Job in progress</button>
+    <div></div><div></div>
+  </header>
+  <div class="page-body" style="max-width:1200px;padding:16px 24px">
+    <div class="inprogress-layout">
+      <!-- Map -->
+      <div class="map-panel">
+        <svg viewBox="0 0 600 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <rect width="600" height="400" fill="#e8f4f0"/>
+          <!-- Roads -->
+          <rect x="0" y="190" width="600" height="20" fill="#fff" opacity=".8"/>
+          <rect x="0" y="195" width="600" height="2" fill="#e2e8f0"/>
+          <rect x="280" y="0" width="20" height="400" fill="#fff" opacity=".8"/>
+          <rect x="285" y="0" width="2" height="400" fill="#e2e8f0"/>
+          <!-- Blocks -->
+          <rect x="40" y="40" width="120" height="140" fill="#d1fae5" rx="6"/>
+          <rect x="180" y="40" width="90" height="80" fill="#d1fae5" rx="6"/>
+          <rect x="310" y="40" width="130" height="100" fill="#d1fae5" rx="6"/>
+          <rect x="40" y="220" width="80" height="100" fill="#d1fae5" rx="6"/>
+          <rect x="140" y="220" width="120" height="140" fill="#d1fae5" rx="6"/>
+          <rect x="310" y="220" width="110" height="80" fill="#d1fae5" rx="6"/>
+          <rect x="440" y="40" width="120" height="140" fill="#d1fae5" rx="6"/>
+          <rect x="440" y="220" width="120" height="80" fill="#d1fae5" rx="6"/>
+          <!-- Route path -->
+          <path d="M 100 320 L 100 200 L 290 200 L 290 130 L 380 130" stroke="#0B6B35" stroke-width="4" fill="none" stroke-dasharray="8,4" opacity=".8"/>
+          <!-- Start pin -->
+          <circle cx="100" cy="330" r="12" fill="#0B6B35"/>
+          <text x="96" y="335" font-size="10" fill="white" font-weight="900">A</text>
+          <!-- End pin -->
+          <text x="370" y="118" font-size="22">📍</text>
+          <!-- Van icon -->
+          <g transform="translate(175,188)">
+            <rect width="32" height="20" rx="4" fill="#0B6B35"/>
+            <circle cx="8" cy="20" r="4" fill="#374151"/>
+            <circle cx="24" cy="20" r="4" fill="#374151"/>
+            <text x="4" y="14" font-size="9" fill="white" font-weight="800">Van</text>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Progress Panel -->
+      <div class="progress-side-panel">
+        <div class="tradie-on-way">
+          <div class="tci-avatar sm" style="background:linear-gradient(135deg,#0B6B35,#22C55E);width:48px;height:48px;font-size:16px">JS</div>
+          <div style="flex:1">
+            <div class="tci-name" style="font-size:15px">John Smith Plumbing</div>
+            <div style="display:flex;align-items:center;gap:6px;margin-top:3px;flex-wrap:wrap">
+              <span class="verified-tick" style="font-size:11px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2z" fill="#0B6B35"/><path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Verified</span>
+              <span class="licensed-pill">✓ Licensed</span>
+            </div>
+          </div>
+          <span class="on-way-badge">On the way</span>
+        </div>
+
+        <div class="eta-row">
+          <div class="eta-item"><div class="eta-label">ETA</div><div class="eta-val">18 mins</div></div>
+          <div class="eta-item"><div class="eta-label">Vehicle</div><div class="eta-val">Toyota Hiace</div></div>
+          <div class="eta-item"><div class="eta-label">Plate</div><div class="eta-val">ABC123</div></div>
+        </div>
+
+        <div class="timeline">
+          <div class="tl-item done">
+            <div class="tl-dot done">✓</div>
+            <div><div class="tl-t">Accepted your job</div><div class="tl-time">10:24 AM</div></div>
+          </div>
+          <div class="tl-item done">
+            <div class="tl-dot done">✓</div>
+            <div><div class="tl-t">On the way</div><div class="tl-time">10:28 AM</div></div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot empty"></div>
+            <div><div class="tl-t">Arrived at your location</div><div class="tl-time">10:46 AM</div></div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot empty"></div>
+            <div><div class="tl-t">Job started</div><div class="tl-time">-</div></div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot empty"></div>
+            <div><div class="tl-t">Job completed</div><div class="tl-time">-</div></div>
+          </div>
+        </div>
+
+        <div class="progress-actions">
+          <button class="pa-chat">💬 Chat</button>
+          <button class="pa-call" onclick="nav('tradie-profile')">📞 Call</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  TRADIE SIGNUP – CREATE ACCOUNT
+============================================================ -->
+<section id="tradie-signup" class="page app-page">
+  <header class="app-header">
+    <div class="brand" onclick="nav('home')" style="cursor:pointer">
+      <div class="brand-logo"><img src="assets/logo.png" alt="KiwiFix"/></div>
+      <div><div class="brand-name">KiwiFix</div><div class="brand-tag">Trusted Trades. Right When You Need Us.</div></div>
+    </div>
+    <nav class="header-nav">
+      <button onclick="nav('how-it-works')">How It Works</button>
+      <button onclick="nav('job-step1')">For Job Posters</button>
+      <button class="nav-active">For Tradies</button>
+      <button onclick="nav('about-us')">About Us</button>
+      <button onclick="nav('about-us')">Contact</button>
+    </nav>
+    <div class="header-right">
+    </div>
+  </header>
+  <div class="auth-split-body">
+    <div class="auth-split-left">
+      <div class="asl-badge">🇳🇿 New Zealand's Tradie Marketplace</div>
+      <h2 class="asl-title">Grow your tradie business with KiwiFix</h2>
+      <p class="asl-sub">Join thousands of verified tradies already winning work across New Zealand.</p>
+      <ul class="auth-benefit-list">
+        <li><span class="abl-icon">💼</span><span>Get matched with local jobs in your area</span></li>
+        <li><span class="abl-icon">⭐</span><span>Build your profile and grow your reputation</span></li>
+        <li><span class="abl-icon">💳</span><span>Secure payments handled through the platform</span></li>
+        <li><span class="abl-icon">🆓</span><span>Free to join — pay only when you win work</span></li>
+      </ul>
+      <div class="asl-stats-row">
+        <div class="asl-stat"><div class="asl-stat-num">5,000+</div><div class="asl-stat-lbl">Tradies</div></div>
+        <div class="asl-stat"><div class="asl-stat-num">12,000+</div><div class="asl-stat-lbl">Jobs Posted</div></div>
+        <div class="asl-stat"><div class="asl-stat-num">4.8★</div><div class="asl-stat-lbl">Avg Rating</div></div>
+      </div>
+    </div>
+    <div class="auth-split-right">
+      <div class="auth-split-form">
+        <div class="auth-steps-row" style="margin-bottom:28px">
+          <div class="as-step active"><div class="as-num">1</div><div class="as-lbl">Create Account</div></div>
+          <div class="as-line"></div>
+          <div class="as-step"><div class="as-num">2</div><div class="as-lbl">Verify</div></div>
+          <div class="as-line"></div>
+          <div class="as-step"><div class="as-num">3</div><div class="as-lbl">Welcome</div></div>
+        </div>
+        <h2 class="auth-title">Create your account</h2>
+        <p class="auth-sub">Join KiwiFix and start growing your business.</p>
+        <div class="auth-form-row">
+          <div class="field-group"><label class="field-label">First name</label><input class="form-input" placeholder="e.g. John"/></div>
+          <div class="field-group"><label class="field-label">Last name</label><input class="form-input" placeholder="e.g. Smith"/></div>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Mobile number</label>
+          <div class="auth-phone-row">
+            <div class="ph-flag-pill">🇳🇿 +64 ▾</div>
+            <input class="form-input" placeholder="e.g. 021 123 4567" type="tel" maxlength="13" oninput="formatMobile(this)" style="flex:1;min-width:0"/>
+          </div>
+        </div>
+        <div class="field-group"><label class="field-label">Email address</label><input class="form-input" placeholder="e.g. john.smith@email.com"/></div>
+        <div class="auth-security-note"><span>🛡</span> We'll send one verification code to your mobile and email. Your information is safe with us.</div>
+        <button class="btn-primary-full" onclick="validateSignup()">Send Verification Code →</button>
+        <div class="auth-link-row">Already have an account? <a onclick="nav('tradie-verify-mobile')" style="cursor:pointer;color:var(--green);font-weight:700">Log in</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  TRADIE VERIFY ACCOUNT (single OTP, sent to both mobile + email)
+============================================================ -->
+<section id="tradie-verify-mobile" class="page app-page">
+  <header class="app-header">
+    <div class="brand" onclick="nav('home')" style="cursor:pointer">
+      <div class="brand-logo"><img src="assets/logo.png" alt="KiwiFix"/></div>
+      <div><div class="brand-name">KiwiFix</div><div class="brand-tag">Trusted Trades. Right When You Need Us.</div></div>
+    </div>
+    <nav class="header-nav">
+      <button onclick="nav('how-it-works')">How It Works</button>
+      <button onclick="nav('job-step1')">For Job Posters</button>
+      <button class="nav-active">For Tradies</button>
+      <button onclick="nav('about-us')">About Us</button>
+      <button onclick="nav('about-us')">Contact</button>
+    </nav>
+    <div class="header-right">
+    </div>
+  </header>
+  <div class="auth-split-body">
+    <div class="auth-split-left">
+      <div class="asl-badge">🇳🇿 New Zealand's Tradie Marketplace</div>
+      <h2 class="asl-title">Almost there — just verify your account</h2>
+      <p class="asl-sub">One code, sent to both your mobile and email, to keep your account and your customers safe.</p>
+      <ul class="auth-benefit-list">
+        <li><span class="abl-icon">🔒</span><span>Your account is protected with OTP verification</span></li>
+        <li><span class="abl-icon">📱</span><span>Customers will be able to contact you via your verified number</span></li>
+        <li><span class="abl-icon">✅</span><span>Verified tradies get more job matches</span></li>
+      </ul>
+    </div>
+    <div class="auth-split-right">
+      <div class="auth-split-form">
+        <div class="auth-steps-row" style="margin-bottom:28px">
+          <div class="as-step done"><div class="as-num">✓</div><div class="as-lbl">Create Account</div></div>
+          <div class="as-line done"></div>
+          <div class="as-step active"><div class="as-num">2</div><div class="as-lbl">Verify</div></div>
+          <div class="as-line"></div>
+          <div class="as-step"><div class="as-num">3</div><div class="as-lbl">Welcome</div></div>
+        </div>
+        <h2 class="auth-title">Verify your account</h2>
+        <p class="auth-sub">Enter the 6-digit code we sent to</p>
+        <div class="verify-target-row">📞 <strong>021 123 4567</strong> <span class="edit-link">Edit</span></div>
+        <div class="verify-target-row">✉ <strong>john.smith@email.com</strong> <span class="edit-link">Edit</span></div>
+        <div class="otp-inputs-row" id="otp-mobile" style="margin:28px 0">
+          <input class="otp-box" maxlength="1" oninput="otpInput(this,'otp-mobile','tradie-services')" onkeydown="otpKey(event,this)"/>
+          <input class="otp-box" maxlength="1" oninput="otpInput(this,'otp-mobile','tradie-services')" onkeydown="otpKey(event,this)"/>
+          <input class="otp-box" maxlength="1" oninput="otpInput(this,'otp-mobile','tradie-services')" onkeydown="otpKey(event,this)"/>
+          <input class="otp-box" maxlength="1" oninput="otpInput(this,'otp-mobile','tradie-services')" onkeydown="otpKey(event,this)"/>
+          <input class="otp-box" maxlength="1" oninput="otpInput(this,'otp-mobile','tradie-services')" onkeydown="otpKey(event,this)"/>
+          <input class="otp-box" maxlength="1" oninput="otpInput(this,'otp-mobile','tradie-services')" onkeydown="otpKey(event,this)"/>
+        </div>
+        <div id="otp-mobile-verified" class="otp-verified-msg" style="display:none">✅ Account verified!</div>
+        <div style="margin-bottom:20px;font-size:14px">Resend code in <span class="green-text">00:45</span></div>
+        <div class="auth-security-note"><span>🛡</span> We use OTP to keep your account secure.</div>
+        <button id="otp-mobile-btn" class="btn-primary-full otp-btn-waiting" onclick="nav('tradie-services')" disabled>Continue →</button>
+        <button class="btn-back-link" onclick="nav('tradie-signup')">← Back</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  TRADIE STEP 1 – PERSONAL DETAILS
+============================================================ -->
+<!-- Steps: Personal(2) Business(3) Licence(4) Services(5) Areas(6) Availability(7) -->
+
+<section id="tradie-personal" class="page app-page">
+  <header class="app-header">
+    <div class="brand" onclick="nav('home')"><div class="brand-logo"><img src="assets/logo.png" alt="KiwiFix"/></div><div><div class="brand-name">KiwiFix</div><div class="brand-tag">Tradie Registration</div></div></div>
+    <div class="tradie-onboard-stepper" data-active="personal">
+      <div class="tos-item" data-step="account">Account</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="services" data-nav="tradie-services">Services</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="personal" data-nav="tradie-personal">Personal</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="business" data-nav="tradie-business">Business</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="licence" data-nav="tradie-licence">Licence</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="areas" data-nav="tradie-areas">Areas</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="availability" data-nav="tradie-availability">Availability</div>
+    </div>
+    <div class="header-right"><span class="step-counter">Step 3 of 7</span></div>
+  </header>
+  <div class="profile-strength-bar"><div class="psb-info"><span class="psb-label">Profile Strength</span><span class="psb-step">Step 3 of 7 · Personal Details</span></div><div class="psb-track"><div class="psb-fill" style="width:10%"></div></div><span class="psb-pct">10%</span></div>
+  <div class="page-body"><div class="tradie-desk-layout">
+    <div class="form-card">
+      <h1 class="page-title">Personal Details</h1>
+      <p class="page-sub" style="margin-bottom:24px">Tell us a bit about yourself.</p>
+
+      <div class="td-avatar-row">
+        <div class="td-avatar">👷</div>
+        <div class="td-avatar-info">
+          <div style="font-weight:700;font-size:14px">Profile Photo</div>
+          <div style="font-size:13px;color:var(--muted)">Add a photo so customers recognise you</div>
+          <button class="btn-outline" style="margin-top:6px;padding:6px 14px;font-size:13px">Upload Photo</button>
+        </div>
+      </div>
+
+      <div class="form-row-2" style="margin-top:20px">
+        <div class="field-group"><label class="field-label">First name</label><div class="input-icon-wrap"><span class="inp-icon">👤</span><input id="personal-firstname" class="form-input" placeholder="e.g. John"/></div></div>
+        <div class="field-group"><label class="field-label">Last name</label><div class="input-icon-wrap"><span class="inp-icon">👤</span><input id="personal-lastname" class="form-input" placeholder="e.g. Smith"/></div></div>
+      </div>
+      <div class="field-group"><label class="field-label">Home address</label><div class="input-icon-wrap"><span class="inp-icon">📍</span><input class="form-input" placeholder="e.g. 23 River Road, Hamilton 3204"/></div></div>
+      <div class="field-group"><label class="field-label">Driver's licence (optional)</label>
+        <div class="upload-box-single" style="padding:16px"><div class="ub-icon-svg"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="3" stroke="#64748B" stroke-width="1.5"/><path d="M7 15h4M7 12h6" stroke="#64748B" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="ub-title" style="font-size:13px">Upload front of licence</div><div class="ub-sub">(optional)</div></div>
+      </div>
+      <div class="form-nav-row">
+        <button class="btn-back" onclick="nav('tradie-services')">← Back</button>
+        <div style="display:flex;gap:12px">
+          <button class="btn-skip" onclick="nav('tradie-business')">Skip →</button>
+          <button class="btn-next" onclick="saveAndContinue('personal','tradie-business')">Save &amp; Continue →</button>
+        </div>
+      </div>
+    </div>
+    <aside class="tradie-desk-sidebar">
+      <div class="tds-card" data-active="personal">
+        <div class="tds-title">Your progress</div>
+        <div class="tds-step" data-step="account"><span class="tds-dot">1</span>Account created</div>
+        <div class="tds-step" data-step="services" data-nav="tradie-services"><span class="tds-dot">2</span>Services offered</div>
+        <div class="tds-step" data-step="personal" data-nav="tradie-personal"><span class="tds-dot">3</span>Personal details</div>
+        <div class="tds-step" data-step="business" data-nav="tradie-business"><span class="tds-dot">4</span>Business details</div>
+        <div class="tds-step" data-step="licence" data-nav="tradie-licence"><span class="tds-dot">5</span>Trade licence</div>
+        <div class="tds-step" data-step="areas" data-nav="tradie-areas"><span class="tds-dot">6</span>Service areas</div>
+        <div class="tds-step" data-step="availability" data-nav="tradie-availability"><span class="tds-dot">7</span>Availability</div>
+      </div>
+      <div class="tds-card tds-tip">
+        <div style="font-size:18px;margin-bottom:6px">💡</div>
+        <div style="font-weight:700;font-size:14px;margin-bottom:4px">Why we ask</div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.5">Your details help customers trust you. A complete profile gets up to 3× more job invites.</div>
+      </div>
+    </aside>
+  </div></div>
+</section>
+
+<!-- ============================================================
+  TRADIE STEP 4 – BUSINESS DETAILS
+============================================================ -->
+<section id="tradie-business" class="page app-page">
+  <header class="app-header">
+    <div class="brand" onclick="nav('home')"><div class="brand-logo"><img src="assets/logo.png" alt="KiwiFix"/></div><div><div class="brand-name">KiwiFix</div><div class="brand-tag">Tradie Registration</div></div></div>
+    <div class="tradie-onboard-stepper" data-active="business">
+      <div class="tos-item" data-step="account">Account</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="services" data-nav="tradie-services">Services</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="personal" data-nav="tradie-personal">Personal</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="business" data-nav="tradie-business">Business</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="licence" data-nav="tradie-licence">Licence</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="areas" data-nav="tradie-areas">Areas</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="availability" data-nav="tradie-availability">Availability</div>
+    </div>
+    <div class="header-right"><span class="step-counter">Step 4 of 7</span></div>
+  </header>
+  <div class="profile-strength-bar"><div class="psb-info"><span class="psb-label">Profile Strength</span><span class="psb-step">Step 4 of 7 · Business Details</span></div><div class="psb-track"><div class="psb-fill" style="width:10%"></div></div><span class="psb-pct">10%</span></div>
+  <div class="page-body"><div class="tradie-desk-layout">
+    <div class="form-card">
+      <h1 class="page-title">Business Details</h1>
+      <p class="page-sub" style="margin-bottom:24px">Tell us about your business.</p>
+
+      <div class="field-group"><label class="field-label">Business name</label><div class="input-icon-wrap"><span class="inp-icon">🏢</span><input id="business-name" class="form-input" placeholder="e.g. John Smith Plumbing"/></div></div>
+      <div class="form-row-2">
+        <div class="field-group"><label class="field-label">Business type</label>
+          <div class="select-wrap"><select id="business-type" class="form-select" onchange="onBusinessTypeChange(this.value)"><option>Sole Trader</option><option>Company</option><option>Partnership</option></select></div>
+        </div>
+        <div class="field-group"><label class="field-label">NZBN (optional)</label><div class="input-icon-wrap"><span class="inp-icon">#</span><input class="form-input" placeholder="e.g. 9429041234567"/></div></div>
+      </div>
+      <div class="form-row-2">
+        <div class="field-group"><label class="field-label">Years of experience</label>
+          <div class="select-wrap"><select class="form-select"><option>8+ years</option><option>5–8 years</option><option>2–5 years</option><option>0–1 year</option></select></div>
+        </div>
+        <div class="field-group"><label class="field-label">Website (optional)</label><div class="input-icon-wrap"><span class="inp-icon">🌐</span><input class="form-input" placeholder="e.g. www.yoursite.co.nz"/></div></div>
+      </div>
+      <div class="field-group">
+        <label class="field-label">GST Registered?</label>
+        <div class="seg-toggle">
+          <button class="ph-seg-btn active">Yes</button>
+          <button class="ph-seg-btn">No</button>
+        </div>
+      </div>
+
+      <div id="teamQuestionBlock" style="display:none">
+        <div class="field-group">
+          <label class="field-label">Do you have other tradespeople working with you under this business?</label>
+          <p class="section-hint" style="margin:-2px 0 10px">Add your team below and we'll collect a licence for each licensed staff member individually, instead of just one for the business.</p>
+          <div class="seg-toggle">
+            <button type="button" class="ph-seg-btn active" id="teamNoBtn" onclick="setHasTeam(false)">Just me</button>
+            <button type="button" class="ph-seg-btn" id="teamYesBtn" onclick="setHasTeam(true)">Me + a team</button>
+          </div>
+        </div>
+
+        <div class="field-group" id="teamRosterBlock" style="display:none">
+          <label class="field-label">Team members</label>
+          <p class="section-hint" style="margin:-2px 0 10px">Add each person working under this business and what they do. Jobs matched to your business are assigned internally — customers see your business, not individual staff.</p>
+          <div id="teamMembersList"></div>
+          <button type="button" class="btn-skip" style="margin-top:4px" onclick="addTeamMember()">+ Add team member</button>
+        </div>
+      </div>
+
+      <div class="form-nav-row">
+        <button class="btn-back" onclick="nav('tradie-personal')">← Back</button>
+        <div style="display:flex;gap:12px">
+          <button class="btn-skip" onclick="nav('tradie-licence')">Skip →</button>
+          <button class="btn-next" onclick="saveAndContinue('business','tradie-licence')">Save &amp; Continue →</button>
+        </div>
+      </div>
+    </div>
+    <aside class="tradie-desk-sidebar">
+      <div class="tds-card" data-active="business">
+        <div class="tds-title">Your progress</div>
+        <div class="tds-step" data-step="account"><span class="tds-dot">1</span>Account created</div>
+        <div class="tds-step" data-step="services" data-nav="tradie-services"><span class="tds-dot">2</span>Services offered</div>
+        <div class="tds-step" data-step="personal" data-nav="tradie-personal"><span class="tds-dot">3</span>Personal details</div>
+        <div class="tds-step" data-step="business" data-nav="tradie-business"><span class="tds-dot">4</span>Business details</div>
+        <div class="tds-step" data-step="licence" data-nav="tradie-licence"><span class="tds-dot">5</span>Trade licence</div>
+        <div class="tds-step" data-step="areas" data-nav="tradie-areas"><span class="tds-dot">6</span>Service areas</div>
+        <div class="tds-step" data-step="availability" data-nav="tradie-availability"><span class="tds-dot">7</span>Availability</div>
+      </div>
+    </aside>
+  </div></div>
+</section>
+
+<!-- ============================================================
+  TRADIE STEP 5 – TRADE LICENCE (dynamic per trade type)
+============================================================ -->
+<section id="tradie-licence" class="page app-page">
+  <header class="app-header">
+    <div class="brand" onclick="nav('home')"><div class="brand-logo"><img src="assets/logo.png" alt="KiwiFix"/></div><div><div class="brand-name">KiwiFix</div><div class="brand-tag">Tradie Registration</div></div></div>
+    <div class="tradie-onboard-stepper" data-active="licence">
+      <div class="tos-item" data-step="account">Account</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="services" data-nav="tradie-services">Services</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="personal" data-nav="tradie-personal">Personal</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="business" data-nav="tradie-business">Business</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="licence" data-nav="tradie-licence">Licence</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="areas" data-nav="tradie-areas">Areas</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="availability" data-nav="tradie-availability">Availability</div>
+    </div>
+    <div class="header-right"><span class="step-counter">Step 5 of 7</span></div>
+  </header>
+  <div class="profile-strength-bar"><div class="psb-info"><span class="psb-label">Profile Strength</span><span class="psb-step">Step 5 of 7 · Trade Licence</span></div><div class="psb-track"><div class="psb-fill" style="width:10%"></div></div><span class="psb-pct">10%</span></div>
+  <div class="page-body"><div class="tradie-desk-layout">
+    <div class="form-card">
+      <h1 class="page-title">Trade Licence</h1>
+      <p class="page-sub" style="margin-bottom:24px">Add your licence details for each trade type. Licensed tradies get the Verified badge.</p>
+
+      <!-- Dynamic licence sections rendered by JS -->
+      <div id="licence-sections"></div>
+
+      <!-- Shared insurance section -->
+      <div class="field-group" style="margin-top:8px"><label class="field-label">Public liability insurance (optional)</label>
+        <div class="upload-box-single" style="padding:16px"><div class="ub-icon-svg"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12" stroke="#64748B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ub-title" style="font-size:13px">Upload insurance certificate</div><div class="ub-sub">PDF, JPG or PNG</div></div>
+      </div>
+
+      <div class="form-nav-row">
+        <button class="btn-back" onclick="nav('tradie-business')">← Back</button>
+        <div style="display:flex;gap:12px">
+          <button class="btn-skip" onclick="nav('tradie-areas')">Skip →</button>
+          <button class="btn-next" onclick="saveAndContinue('licence','tradie-areas')">Save &amp; Continue →</button>
+        </div>
+      </div>
+    </div>
+    <aside class="tradie-desk-sidebar">
+      <div class="tds-card" data-active="licence">
+        <div class="tds-title">Your progress</div>
+        <div class="tds-step" data-step="account"><span class="tds-dot">1</span>Account created</div>
+        <div class="tds-step" data-step="services" data-nav="tradie-services"><span class="tds-dot">2</span>Services offered</div>
+        <div class="tds-step" data-step="personal" data-nav="tradie-personal"><span class="tds-dot">3</span>Personal details</div>
+        <div class="tds-step" data-step="business" data-nav="tradie-business"><span class="tds-dot">4</span>Business details</div>
+        <div class="tds-step" data-step="licence" data-nav="tradie-licence"><span class="tds-dot">5</span>Trade licence</div>
+        <div class="tds-step" data-step="areas" data-nav="tradie-areas"><span class="tds-dot">6</span>Service areas</div>
+        <div class="tds-step" data-step="availability" data-nav="tradie-availability"><span class="tds-dot">7</span>Availability</div>
+      </div>
+      <div class="tds-card tds-tip">
+        <div style="font-size:18px;margin-bottom:6px">🛡</div>
+        <div style="font-weight:700;font-size:14px;margin-bottom:4px">Why this matters</div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.5">Licensed and insured tradies get the Verified badge and appear higher in search results.</div>
+      </div>
+    </aside>
+  </div></div>
+</section>
+
+<!-- ============================================================
+  TRADIE STEP 2 – SERVICES OFFERED (trade type + services)
+============================================================ -->
+<section id="tradie-services" class="page app-page">
+  <header class="app-header">
+    <div class="brand" onclick="nav('home')"><div class="brand-logo"><img src="assets/logo.png" alt="KiwiFix"/></div><div><div class="brand-name">KiwiFix</div><div class="brand-tag">Tradie Registration</div></div></div>
+    <div class="tradie-onboard-stepper" data-active="services">
+      <div class="tos-item" data-step="account">Account</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="services" data-nav="tradie-services">Services</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="personal" data-nav="tradie-personal">Personal</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="business" data-nav="tradie-business">Business</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="licence" data-nav="tradie-licence">Licence</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="areas" data-nav="tradie-areas">Areas</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="availability" data-nav="tradie-availability">Availability</div>
+    </div>
+    <div class="header-right"><span class="step-counter">Step 2 of 7</span></div>
+  </header>
+  <div class="profile-strength-bar"><div class="psb-info"><span class="psb-label">Profile Strength</span><span class="psb-step">Step 2 of 7 · Services Offered</span></div><div class="psb-track"><div class="psb-fill" style="width:10%"></div></div><span class="psb-pct">10%</span></div>
+  <div class="page-body"><div class="tradie-desk-layout">
+    <div class="form-card">
+      <h1 class="page-title">Services Offered</h1>
+      <p class="page-sub" style="margin-bottom:24px">First, tell us what type of tradie you are. Then select the specific services you offer.</p>
+
+      <!-- Trade type selector -->
+      <div class="field-group" style="margin-bottom:28px">
+        <label class="field-label" style="font-size:14px;font-weight:800;margin-bottom:12px;display:block">What type of tradie are you? <span style="color:#64748b;font-weight:500">(Select all that apply)</span></label>
+        <div class="trade-type-grid" id="tradeTypeGrid">
+          <label class="trade-type-card"><input type="checkbox" name="tradeType" value="Plumber" onchange="updateServicesList()" checked/><span class="ttc-icon">🔧</span><span>Plumber</span></label>
+          <label class="trade-type-card"><input type="checkbox" name="tradeType" value="Electrician" onchange="updateServicesList()"/><span class="ttc-icon">⚡</span><span>Electrician</span></label>
+          <label class="trade-type-card"><input type="checkbox" name="tradeType" value="Gasfitter" onchange="updateServicesList()"/><span class="ttc-icon">🔥</span><span>Gasfitter</span></label>
+          <label class="trade-type-card"><input type="checkbox" name="tradeType" value="Drainlayer" onchange="updateServicesList()"/><span class="ttc-icon">🕳️</span><span>Drainlayer</span></label>
+          <label class="trade-type-card"><input type="checkbox" name="tradeType" value="HVAC Technician" onchange="updateServicesList()"/><span class="ttc-icon">❄️</span><span>HVAC / Air Con</span></label>
+          <label class="trade-type-card"><input type="checkbox" name="tradeType" value="Lift Technician" onchange="updateServicesList()"/><span class="ttc-icon">🛗</span><span>Lift Technician</span></label>
+          <label class="trade-type-card"><input type="checkbox" name="tradeType" value="Scaffolder" onchange="updateServicesList()"/><span class="ttc-icon">🪜</span><span>Scaffolder</span></label>
+          <label class="trade-type-card"><input type="checkbox" name="tradeType" value="Arborist" onchange="updateServicesList()"/><span class="ttc-icon">🪚</span><span>Arborist</span></label>
+          <label class="trade-type-card"><input type="checkbox" name="tradeType" value="Solar Installer" onchange="updateServicesList()"/><span class="ttc-icon">☀️</span><span>Solar Installer</span></label>
+          <label class="trade-type-card"><input type="checkbox" name="tradeType" value="Fire Protection Technician" onchange="updateServicesList()"/><span class="ttc-icon">🚒</span><span>Fire Protection</span></label>
+          <label class="trade-type-card"><input type="checkbox" name="tradeType" value="Builder" onchange="updateServicesList()"/><span class="ttc-icon">🏗️</span><span>Builder</span></label>
+          <label class="trade-type-card"><input type="checkbox" name="tradeType" value="Carpenter" onchange="updateServicesList()"/><span class="ttc-icon">🔨</span><span>Carpenter</span></label>
+          <label class="trade-type-card"><input type="checkbox" name="tradeType" value="Painter" onchange="updateServicesList()"/><span class="ttc-icon">🎨</span><span>Painter</span></label>
+          <label class="trade-type-card"><input type="checkbox" name="tradeType" value="Gardener" onchange="updateServicesList()"/><span class="ttc-icon">🌿</span><span>Gardener</span></label>
+          <label class="trade-type-card"><input type="checkbox" name="tradeType" value="Cleaner" onchange="updateServicesList()"/><span class="ttc-icon">🧹</span><span>Cleaner</span></label>
+          <label class="trade-type-card"><input type="checkbox" name="tradeType" value="Roofer" onchange="updateServicesList()"/><span class="ttc-icon">🏠</span><span>Roofer</span></label>
+          <label class="trade-type-card"><input type="checkbox" name="tradeType" value="Tiler" onchange="updateServicesList()"/><span class="ttc-icon">🪟</span><span>Tiler</span></label>
+          <label class="trade-type-card"><input type="checkbox" name="tradeType" value="Glazier" onchange="updateServicesList()"/><span class="ttc-icon">🪞</span><span>Glazier</span></label>
+          <label class="trade-type-card"><input type="checkbox" name="tradeType" value="Flooring Installer" onchange="updateServicesList()"/><span class="ttc-icon">🪵</span><span>Flooring Installer</span></label>
+          <label class="trade-type-card"><input type="checkbox" name="tradeType" value="Fencer" onchange="updateServicesList()"/><span class="ttc-icon">🚪</span><span>Fencer</span></label>
+          <label class="trade-type-card"><input type="checkbox" name="tradeType" value="Cabinet Maker" onchange="updateServicesList()"/><span class="ttc-icon">🪛</span><span>Cabinet Maker</span></label>
+          <div class="trade-type-card add-trade-tile" id="addTradeTile" onclick="toggleAddTradeInput()"><span class="ttc-icon">➕</span><span>Add Trade</span></div>
+        </div>
+
+        <div class="add-trade-row" id="addTradeRow" style="display:none">
+          <input type="text" class="form-input" id="addTradeInput" placeholder="Don't see your trade? Type it here — e.g. Pool Builder, Interior Designer..."
+            onkeydown="if(event.key==='Enter'){event.preventDefault();addCustomTrade();}"/>
+          <button type="button" class="btn-outline custom-svc-add-btn" onclick="addCustomTrade()">+ Add</button>
+        </div>
+      </div>
+
+      <!-- Dynamic services list -->
+      <div id="servicesByTrade"></div>
+
+      <div class="form-nav-row">
+        <button class="btn-back" onclick="nav('tradie-verify-mobile')">← Back</button>
+        <div style="display:flex;gap:12px">
+          <button class="btn-skip" onclick="nav('tradie-personal')">Skip →</button>
+          <button class="btn-next" onclick="saveAndContinue('services','tradie-personal')">Save &amp; Continue →</button>
+        </div>
+      </div>
+    </div>
+    <aside class="tradie-desk-sidebar">
+      <div class="tds-card" data-active="services">
+        <div class="tds-title">Your progress</div>
+        <div class="tds-step" data-step="account"><span class="tds-dot">1</span>Account created</div>
+        <div class="tds-step" data-step="services" data-nav="tradie-services"><span class="tds-dot">2</span>Services offered</div>
+        <div class="tds-step" data-step="personal" data-nav="tradie-personal"><span class="tds-dot">3</span>Personal details</div>
+        <div class="tds-step" data-step="business" data-nav="tradie-business"><span class="tds-dot">4</span>Business details</div>
+        <div class="tds-step" data-step="licence" data-nav="tradie-licence"><span class="tds-dot">5</span>Trade licence</div>
+        <div class="tds-step" data-step="areas" data-nav="tradie-areas"><span class="tds-dot">6</span>Service areas</div>
+        <div class="tds-step" data-step="availability" data-nav="tradie-availability"><span class="tds-dot">7</span>Availability</div>
+      </div>
+      <div class="tds-card tds-tip">
+        <div style="font-size:18px;margin-bottom:6px">💡</div>
+        <div style="font-weight:700;font-size:14px;margin-bottom:4px">Tip</div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.5">Selecting multiple trade types means you'll appear in more job searches. Each trade requires its own licence on the next step.</div>
+      </div>
+    </aside>
+  </div></div>
+</section>
+
+<!-- ============================================================
+  TRADIE STEP 5 – SERVICE AREAS
+============================================================ -->
+<section id="tradie-areas" class="page app-page">
+  <header class="app-header">
+    <div class="brand" onclick="nav('home')"><div class="brand-logo"><img src="assets/logo.png" alt="KiwiFix"/></div><div><div class="brand-name">KiwiFix</div><div class="brand-tag">Tradie Registration</div></div></div>
+    <div class="tradie-onboard-stepper" data-active="areas">
+      <div class="tos-item" data-step="account">Account</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="services" data-nav="tradie-services">Services</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="personal" data-nav="tradie-personal">Personal</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="business" data-nav="tradie-business">Business</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="licence" data-nav="tradie-licence">Licence</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="areas" data-nav="tradie-areas">Areas</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="availability" data-nav="tradie-availability">Availability</div>
+    </div>
+    <div class="header-right"><span class="step-counter">Step 6 of 7</span></div>
+  </header>
+  <div class="profile-strength-bar"><div class="psb-info"><span class="psb-label">Profile Strength</span><span class="psb-step">Step 6 of 7 · Service Areas</span></div><div class="psb-track"><div class="psb-fill" style="width:10%"></div></div><span class="psb-pct">10%</span></div>
+  <div class="page-body"><div class="tradie-desk-layout">
+    <div class="form-card">
+      <h1 class="page-title">Service Areas</h1>
+      <p class="page-sub" style="margin-bottom:24px">Tell us where you work so we can match you with local jobs.</p>
+      <div class="form-row-2">
+        <div class="field-group"><label class="field-label">Region</label>
+          <div class="select-wrap"><select id="areas-region" class="form-select"><option>Waikato</option><option>Auckland</option><option>Wellington</option><option>Canterbury</option></select></div>
+        </div>
+        <div class="field-group"><label class="field-label">Max travel distance</label>
+          <div class="select-wrap"><select class="form-select"><option>10 km</option><option selected>20 km</option><option>30 km</option><option>50 km</option></select></div>
+        </div>
+      </div>
+      <div class="field-group"><label class="field-label">Suburbs / Areas</label>
+        <div class="tag-row" id="areas-tag-row" style="margin-top:8px">
+          <span class="area-tag">Hamilton ✕</span>
+          <span class="area-tag">Ngaruawahia ✕</span>
+          <span class="area-tag">Cambridge ✕</span>
+          <span class="area-tag">Te Awamutu ✕</span>
+          <button class="add-area-btn">+ Add area</button>
+        </div>
+      </div>
+      <div class="location-hint" style="margin-top:8px">📍 You'll only receive job invites within these areas.</div>
+      <div class="form-nav-row">
+        <button class="btn-back" onclick="nav('tradie-licence')">← Back</button>
+        <div style="display:flex;gap:12px">
+          <button class="btn-skip" onclick="nav('tradie-availability')">Skip →</button>
+          <button class="btn-next" onclick="saveAndContinue('areas','tradie-availability')">Save &amp; Continue →</button>
+        </div>
+      </div>
+    </div>
+    <aside class="tradie-desk-sidebar">
+      <div class="tds-card" data-active="areas">
+        <div class="tds-title">Your progress</div>
+        <div class="tds-step" data-step="account"><span class="tds-dot">1</span>Account created</div>
+        <div class="tds-step" data-step="services" data-nav="tradie-services"><span class="tds-dot">2</span>Services offered</div>
+        <div class="tds-step" data-step="personal" data-nav="tradie-personal"><span class="tds-dot">3</span>Personal details</div>
+        <div class="tds-step" data-step="business" data-nav="tradie-business"><span class="tds-dot">4</span>Business details</div>
+        <div class="tds-step" data-step="licence" data-nav="tradie-licence"><span class="tds-dot">5</span>Trade licence</div>
+        <div class="tds-step" data-step="areas" data-nav="tradie-areas"><span class="tds-dot">6</span>Service areas</div>
+        <div class="tds-step" data-step="availability" data-nav="tradie-availability"><span class="tds-dot">7</span>Availability</div>
+      </div>
+    </aside>
+  </div></div>
+</section>
+
+<!-- ============================================================
+  TRADIE STEP 6 – AVAILABILITY
+============================================================ -->
+<section id="tradie-availability" class="page app-page">
+  <header class="app-header">
+    <div class="brand" onclick="nav('home')"><div class="brand-logo"><img src="assets/logo.png" alt="KiwiFix"/></div><div><div class="brand-name">KiwiFix</div><div class="brand-tag">Tradie Registration</div></div></div>
+    <div class="tradie-onboard-stepper" data-active="availability">
+      <div class="tos-item" data-step="account">Account</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="services" data-nav="tradie-services">Services</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="personal" data-nav="tradie-personal">Personal</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="business" data-nav="tradie-business">Business</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="licence" data-nav="tradie-licence">Licence</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="areas" data-nav="tradie-areas">Areas</div><div class="tos-line"></div>
+      <div class="tos-item" data-step="availability" data-nav="tradie-availability">Availability</div>
+    </div>
+    <div class="header-right"><span class="step-counter">Step 7 of 7</span></div>
+  </header>
+  <div class="profile-strength-bar"><div class="psb-info"><span class="psb-label">Profile Strength</span><span class="psb-step">Step 7 of 7 · Availability</span></div><div class="psb-track"><div class="psb-fill" style="width:10%"></div></div><span class="psb-pct">10%</span></div>
+  <div class="page-body"><div class="tradie-desk-layout">
+    <div class="form-card">
+      <h1 class="page-title">Availability</h1>
+      <p class="page-sub" style="margin-bottom:24px">Set your working days and hours.</p>
+
+      <div class="field-group"><label class="field-label">Working days</label>
+        <div class="day-btn-row" style="margin-top:8px">
+          <button class="day-btn active">Mon</button>
+          <button class="day-btn active">Tue</button>
+          <button class="day-btn active">Wed</button>
+          <button class="day-btn active">Thu</button>
+          <button class="day-btn active">Fri</button>
+          <button class="day-btn">Sat</button>
+          <button class="day-btn">Sun</button>
+        </div>
+      </div>
+
+      <div class="form-row-2" style="margin-top:16px">
+        <div class="field-group"><label class="field-label">Start time</label>
+          <div class="select-wrap"><select class="form-select"><option>07:00 AM</option><option selected>08:00 AM</option><option>09:00 AM</option></select></div>
+        </div>
+        <div class="field-group"><label class="field-label">End time</label>
+          <div class="select-wrap"><select class="form-select"><option selected>06:00 PM</option><option>05:00 PM</option><option>07:00 PM</option></select></div>
+        </div>
+      </div>
+
+      <div class="field-group" style="margin-top:8px">
+        <label class="field-label">Accept emergency call-outs?</label>
+        <div class="seg-toggle" style="margin-top:8px">
+          <button class="ph-seg-btn active">Yes</button>
+          <button class="ph-seg-btn">No</button>
+        </div>
+        <div class="location-hint" style="margin-top:8px">📍 Customers can request emergency jobs outside your working hours.</div>
+      </div>
+
+      <div class="form-nav-row">
+        <button class="btn-back" onclick="nav('tradie-areas')">← Back</button>
+        <div style="display:flex;gap:12px">
+          <button class="btn-skip" onclick="nav('tradie-review-submit')">Skip →</button>
+          <button class="btn-next" onclick="saveAndContinue('availability','tradie-review-submit')">Save &amp; Continue →</button>
+        </div>
+      </div>
+    </div>
+    <aside class="tradie-desk-sidebar">
+      <div class="tds-card" data-active="availability">
+        <div class="tds-title">Your progress</div>
+        <div class="tds-step" data-step="account"><span class="tds-dot">1</span>Account created</div>
+        <div class="tds-step" data-step="services" data-nav="tradie-services"><span class="tds-dot">2</span>Services offered</div>
+        <div class="tds-step" data-step="personal" data-nav="tradie-personal"><span class="tds-dot">3</span>Personal details</div>
+        <div class="tds-step" data-step="business" data-nav="tradie-business"><span class="tds-dot">4</span>Business details</div>
+        <div class="tds-step" data-step="licence" data-nav="tradie-licence"><span class="tds-dot">5</span>Trade licence</div>
+        <div class="tds-step" data-step="areas" data-nav="tradie-areas"><span class="tds-dot">6</span>Service areas</div>
+        <div class="tds-step" data-step="availability" data-nav="tradie-availability"><span class="tds-dot">7</span>Availability</div>
+      </div>
+      <div class="tds-card tds-tip">
+        <div style="font-size:18px;margin-bottom:6px">🎉</div>
+        <div style="font-weight:700;font-size:14px;margin-bottom:4px">Almost there!</div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.5">One more step — review and submit your profile to start receiving jobs.</div>
+      </div>
+    </aside>
+  </div></div>
+</section>
+
+<!-- ============================================================
+  TRADIE REVIEW & SUBMIT
+============================================================ -->
+<section id="tradie-review-submit" class="page app-page">
+  <header class="app-header">
+    <div class="brand" onclick="nav('home')" style="cursor:pointer">
+      <div class="brand-logo"><img src="assets/logo.png" alt="KiwiFix"/></div>
+      <div><div class="brand-name">KiwiFix</div><div class="brand-tag">Tradie Registration</div></div>
+    </div>
+    <div class="tradie-onboard-stepper">
+      <div class="tos-item done">✓ Account</div><div class="tos-line done"></div>
+      <div class="tos-item done" onclick="nav('tradie-services')" style="cursor:pointer">✓ Services</div><div class="tos-line done"></div>
+      <div class="tos-item done" onclick="nav('tradie-personal')" style="cursor:pointer">✓ Personal</div><div class="tos-line done"></div>
+      <div class="tos-item done" onclick="nav('tradie-business')" style="cursor:pointer">✓ Business</div><div class="tos-line done"></div>
+      <div class="tos-item done" onclick="nav('tradie-licence')" style="cursor:pointer">✓ Licence</div><div class="tos-line done"></div>
+      <div class="tos-item done" onclick="nav('tradie-areas')" style="cursor:pointer">✓ Areas</div><div class="tos-line done"></div>
+      <div class="tos-item done" onclick="nav('tradie-availability')" style="cursor:pointer">✓ Availability</div>
+    </div>
+    <div class="header-right"><button class="btn-back" onclick="nav('tradie-availability')" style="font-size:13px">← Back</button></div>
+  </header>
+  <div class="profile-strength-bar"><div class="psb-info"><span class="psb-label">Profile Strength</span><span class="psb-step">Review &amp; Submit</span></div><div class="psb-track"><div class="psb-fill" style="width:10%"></div></div><span class="psb-pct">10%</span></div>
+  <div class="page-body" style="max-width:1100px">
+
+    <h1 class="page-title">Review &amp; Submit</h1>
+    <p class="page-sub" style="margin-bottom:28px">Please review your information before submitting.</p>
+
+    <div id="pending-review-banner" class="custom-review-note" style="display:none;margin-bottom:14px"></div>
+    <div id="pending-licence-banner" class="custom-licence-note" style="display:none;margin-bottom:20px"></div>
+
+    <div class="review-cards-grid">
+      <div class="rc-card"><div class="rcc-icon">👤</div><div class="rcc-title">Personal Details</div><div class="rcc-data">John Smith<br>Hamilton, NZ</div><button class="rcc-edit" onclick="nav('tradie-personal')">Edit</button></div>
+      <div class="rc-card"><div class="rcc-icon">🏢</div><div class="rcc-title">Business Details</div><div class="rcc-data" id="rvBusinessSummary">Not set yet</div><button class="rcc-edit" onclick="nav('tradie-business')">Edit</button></div>
+      <div class="rc-card"><div class="rcc-icon">📋</div><div class="rcc-title">Trade Licence</div><div class="rcc-data">Plumber<br>PLB123456<br>Exp: 15/11/2026</div><button class="rcc-edit" onclick="nav('tradie-licence')">Edit</button></div>
+      <div class="rc-card"><div class="rcc-icon">⚙</div><div class="rcc-title">Services Offered</div><div class="rcc-data" id="rvServicesSummary">6 services selected</div><button class="rcc-edit" onclick="nav('tradie-services')">Edit</button></div>
+      <div class="rc-card"><div class="rcc-icon">📍</div><div class="rcc-title">Service Areas</div><div class="rcc-data">Waikato Region<br>4 areas selected</div><button class="rcc-edit" onclick="nav('tradie-areas')">Edit</button></div>
+      <div class="rc-card"><div class="rcc-icon">🕐</div><div class="rcc-title">Availability</div><div class="rcc-data">Mon - Fri<br>7:00 AM - 6:00 PM</div><button class="rcc-edit" onclick="nav('tradie-availability')">Edit</button></div>
+    </div>
+
+    <label class="confirm-label">
+      <input type="checkbox" id="confirmCheck"/>
+      I confirm that all the information provided is true and correct.
+    </label>
+
+    <button class="btn-next-full" style="max-width:500px;margin:20px auto;display:block" onclick="nav('tradie-submitted')">Submit for Review</button>
+    <p style="text-align:center;font-size:13px;color:#64748b">Our team will verify your details and activate your account.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+  TRADIE APPLICATION SUBMITTED
+============================================================ -->
+<section id="tradie-submitted" class="page app-page">
+  <div class="submitted-center">
+    <div class="submitted-img">
+      <svg viewBox="0 0 200 180" width="200" xmlns="http://www.w3.org/2000/svg">
+        <rect x="60" y="30" width="100" height="130" rx="10" fill="white" stroke="#e2e8f0" stroke-width="2"/>
+        <rect x="80" y="20" width="60" height="20" rx="4" fill="#94a3b8"/>
+        <rect x="75" y="55" width="70" height="6" rx="3" fill="#e2e8f0"/>
+        <rect x="75" y="68" width="50" height="6" rx="3" fill="#e2e8f0"/>
+        <rect x="75" y="81" width="60" height="6" rx="3" fill="#e2e8f0"/>
+        <rect x="75" y="94" width="40" height="6" rx="3" fill="#e2e8f0"/>
+        <!-- Green check circle -->
+        <circle cx="158" cy="40" r="22" fill="#0B6B35"/>
+        <path d="M 148 40 L 155 47 L 170 32" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h1 class="page-title" style="margin-bottom:8px">Application submitted!</h1>
+    <p class="page-sub" style="margin-bottom:28px">Thank you! Your application is now under review.</p>
+
+    <div class="form-card" style="max-width:440px;width:100%">
+      <div class="form-section-label">What happens next?</div>
+      <div class="sn-item">✓ We will verify your details</div>
+      <div class="sn-item">✓ You'll be notified via email or SMS</div>
+      <div class="sn-item">✓ Usually within 24 – 48 hours</div>
+    </div>
+
+    <button class="btn-next" style="margin-top:24px;width:200px" onclick="completeTradieOnboarding()">Go to Dashboard</button>
+  </div>
+</section>
+
+</main>
+<script src="app.js"></script>
+</body>
+</html>

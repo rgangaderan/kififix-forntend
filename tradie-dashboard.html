@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KiwiFix – Tradie Dashboard</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-dark:  #073820;
+      --green:       #0B6B35;
+      --green-mid:   #15803D;
+      --green-light: #22C55E;
+      --green-bg:    #F0FDF4;
+      --green-border:#BBF7D0;
+      --dark:        #0F172A;
+      --muted:       #64748B;
+      --border:      #E2E8F0;
+      --bg:          #F8FAFC;
+      --white:       #FFFFFF;
+      --radius:      12px;
+      --shadow:      0 2px 12px rgba(0,0,0,.07);
+    }
+
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--dark); min-height: 100vh; }
+
+    /* ── HEADER ── */
+    .db-header {
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 0 32px; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 1px 4px rgba(0,0,0,.06);
+    }
+    .db-brand { display: flex; align-items: center; gap: 10px; cursor: pointer; text-decoration: none; }
+    .db-brand img { width: 38px; height: 38px; border-radius: 8px; }
+    .db-brand-name { font-size: 18px; font-weight: 800; color: var(--green-dark); }
+    .db-brand-tag  { font-size: 11px; color: var(--muted); }
+    .db-header-right { display: flex; align-items: center; gap: 16px; }
+    .db-notif {
+      position: relative; background: var(--bg); border: 1px solid var(--border);
+      border-radius: 10px; width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center; cursor: pointer;
+      font-size: 18px;
+    }
+    .db-notif-dot {
+      position: absolute; top: 7px; right: 8px; width: 8px; height: 8px;
+      background: #EF4444; border-radius: 50%; border: 2px solid var(--white);
+    }
+    .db-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--green); color: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 15px; cursor: pointer;
+    }
+    .db-nav-link {
+      font-size: 14px; font-weight: 500; color: var(--muted);
+      text-decoration: none; padding: 6px 10px; border-radius: 8px;
+      transition: background .15s, color .15s;
+    }
+    .db-nav-link:hover { background: var(--green-bg); color: var(--green); }
+    .db-nav-link.active { color: var(--green); font-weight: 600; }
+
+    /* ── LAYOUT ── */
+    .db-layout { display: grid; grid-template-columns: 260px 1fr; min-height: calc(100vh - 64px); }
+
+    /* ── SIDEBAR ── */
+    .db-sidebar {
+      background: var(--white); border-right: 1px solid var(--border);
+      padding: 24px 16px; display: flex; flex-direction: column; gap: 4px;
+    }
+    .db-sidebar-section { font-size: 11px; font-weight: 600; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; padding: 16px 12px 8px; }
+    .db-sidebar-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 12px; border-radius: 10px; cursor: pointer;
+      font-size: 14px; font-weight: 500; color: var(--muted);
+      transition: background .15s, color .15s; text-decoration: none;
+    }
+    .db-sidebar-item:hover { background: var(--green-bg); color: var(--green); }
+    .db-sidebar-item.active { background: var(--green-bg); color: var(--green); font-weight: 600; }
+    .db-sidebar-item .icon { font-size: 18px; width: 24px; text-align: center; }
+    .db-badge {
+      margin-left: auto; background: var(--green); color: #fff;
+      font-size: 11px; font-weight: 700; border-radius: 20px;
+      padding: 2px 8px; min-width: 20px; text-align: center;
+    }
+
+    /* Profile block in sidebar */
+    .db-profile-block {
+      background: var(--green-bg); border: 1px solid var(--green-border);
+      border-radius: 14px; padding: 18px; margin-bottom: 8px; text-align: center;
+    }
+    .db-profile-photo {
+      width: 72px; height: 72px; border-radius: 50%; background: var(--green);
+      margin: 0 auto 10px; display: flex; align-items: center; justify-content: center;
+      font-size: 28px; font-weight: 700; color: #fff; position: relative;
+    }
+    .db-verified-badge {
+      position: absolute; bottom: 0; right: 0;
+      background: var(--green-light); border-radius: 50%;
+      width: 22px; height: 22px; display: flex; align-items: center; justify-content: center;
+      font-size: 12px; border: 2px solid var(--white);
+    }
+    .db-profile-name  { font-size: 15px; font-weight: 700; color: var(--dark); }
+    .db-profile-trade { font-size: 12px; color: var(--green); font-weight: 600; margin: 2px 0 6px; }
+    .db-profile-area  { font-size: 12px; color: var(--muted); }
+    .db-stars { color: #F59E0B; font-size: 13px; margin: 6px 0 2px; }
+    .db-rating-text { font-size: 12px; color: var(--muted); }
+    .db-profile-complete {
+      margin-top: 10px; background: var(--white); border-radius: 8px;
+      padding: 8px 10px; font-size: 12px; color: var(--muted);
+    }
+    .db-pct-bar { height: 6px; background: var(--border); border-radius: 4px; margin: 6px 0 4px; overflow: hidden; }
+    .db-pct-fill { height: 100%; background: var(--green); border-radius: 4px; width: 85%; }
+
+    /* ── MAIN ── */
+    .db-main { padding: 28px 32px; overflow-y: auto; }
+    .db-greeting { margin-bottom: 24px; }
+    .db-greeting h1 { font-size: 22px; font-weight: 700; color: var(--dark); }
+    .db-greeting p  { font-size: 14px; color: var(--muted); margin-top: 4px; }
+
+    /* Stats row */
+    .db-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 28px; }
+    .db-stat-card {
+      background: var(--white); border-radius: var(--radius); padding: 20px;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+    }
+    .db-stat-label { font-size: 12px; color: var(--muted); font-weight: 500; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+    .db-stat-value { font-size: 28px; font-weight: 800; color: var(--dark); }
+    .db-stat-sub   { font-size: 12px; color: var(--green); margin-top: 4px; font-weight: 500; }
+
+    /* Two column grid for main content */
+    .db-content-grid { display: grid; grid-template-columns: 1fr 340px; gap: 20px; }
+
+    /* Section header */
+    .db-section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .db-section-title { font-size: 16px; font-weight: 700; color: var(--dark); }
+    .db-see-all { font-size: 13px; color: var(--green); font-weight: 600; cursor: pointer; text-decoration: none; }
+    .db-see-all:hover { text-decoration: underline; }
+
+    /* Job cards */
+    .db-job-card {
+      background: var(--white); border-radius: var(--radius);
+      border: 1px solid var(--border); padding: 18px 20px; margin-bottom: 12px;
+      box-shadow: var(--shadow); cursor: pointer;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .db-job-card:hover { border-color: var(--green); box-shadow: 0 4px 16px rgba(11,107,53,.1); }
+    .db-job-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+    .db-job-cat {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--green-bg); color: var(--green);
+      font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 20px;
+    }
+    .db-job-urgency {
+      font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 20px;
+    }
+    .db-urgency-emergency { background: #FEF2F2; color: #DC2626; }
+    .db-urgency-within-week { background: #FFF7ED; color: #EA580C; }
+    .db-urgency-flexible { background: var(--green-bg); color: var(--green); }
+    .db-job-title { font-size: 15px; font-weight: 600; color: var(--dark); margin-bottom: 6px; }
+    .db-job-desc  { font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .db-job-meta  { display: flex; align-items: center; gap: 16px; font-size: 12px; color: var(--muted); }
+    .db-job-meta span { display: flex; align-items: center; gap: 4px; }
+    .db-job-actions { display: flex; gap: 8px; margin-top: 14px; }
+    .db-btn-primary {
+      background: var(--green); color: #fff; border: none; border-radius: 8px;
+      padding: 9px 18px; font-size: 13px; font-weight: 600; cursor: pointer;
+      transition: background .15s;
+    }
+    .db-btn-primary:hover { background: var(--green-dark); }
+    .db-btn-secondary {
+      background: var(--bg); color: var(--muted); border: 1px solid var(--border);
+      border-radius: 8px; padding: 9px 18px; font-size: 13px; font-weight: 600; cursor: pointer;
+    }
+    .db-btn-secondary:hover { border-color: var(--green); color: var(--green); }
+
+    /* Right column */
+    .db-right-col { display: flex; flex-direction: column; gap: 20px; }
+
+    /* Profile summary card */
+    .db-card {
+      background: var(--white); border-radius: var(--radius);
+      border: 1px solid var(--border); box-shadow: var(--shadow); padding: 20px;
+    }
+    .db-profile-summary-row { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .db-summary-avatar {
+      width: 44px; height: 44px; border-radius: 50%; background: var(--green);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 700; color: #fff; flex-shrink: 0;
+    }
+    .db-summary-name  { font-size: 15px; font-weight: 700; }
+    .db-summary-trade { font-size: 12px; color: var(--green); font-weight: 600; }
+
+    .db-info-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+    .db-info-row:last-child { border-bottom: none; }
+    .db-info-label { color: var(--muted); }
+    .db-info-value { font-weight: 600; color: var(--dark); text-align: right; }
+
+    /* Recent jobs list */
+    .db-recent-job { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); }
+    .db-recent-job:last-child { border-bottom: none; }
+    .db-recent-icon {
+      width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center; font-size: 18px;
+    }
+    .db-recent-job-title { font-size: 13px; font-weight: 600; color: var(--dark); }
+    .db-recent-job-meta  { font-size: 11px; color: var(--muted); margin-top: 2px; }
+    .db-status-pill {
+      margin-left: auto; font-size: 11px; font-weight: 600; padding: 3px 10px;
+      border-radius: 20px; white-space: nowrap; flex-shrink: 0;
+    }
+    .db-status-done    { background: var(--green-bg); color: var(--green); }
+    .db-status-active  { background: #EFF6FF; color: #2563EB; }
+    .db-status-pending { background: #FFF7ED; color: #EA580C; }
+
+    /* Availability toggle */
+    .db-avail-row { display: flex; align-items: center; justify-content: space-between; }
+    .db-avail-label { font-size: 14px; font-weight: 600; }
+    .db-avail-sub   { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .db-toggle { position: relative; width: 44px; height: 24px; cursor: pointer; }
+    .db-toggle input { opacity: 0; width: 0; height: 0; }
+    .db-toggle-track {
+      position: absolute; inset: 0; background: var(--green); border-radius: 24px;
+      transition: background .2s;
+    }
+    .db-toggle input:not(:checked) + .db-toggle-track { background: var(--border); }
+    .db-toggle-thumb {
+      position: absolute; top: 3px; left: 3px; width: 18px; height: 18px;
+      background: #fff; border-radius: 50%; transition: transform .2s;
+      box-shadow: 0 1px 3px rgba(0,0,0,.2);
+    }
+    .db-toggle input:checked ~ .db-toggle-thumb { transform: translateX(20px); }
+
+    /* Empty state */
+    .db-empty { text-align: center; padding: 40px 20px; color: var(--muted); font-size: 14px; }
+    .db-empty-icon { font-size: 36px; margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     HEADER
+══════════════════════════════════════ -->
+<header class="db-header">
+  <a class="db-brand" href="index.html">
+    <img src="assets/logo.png" alt="KiwiFix"/>
+    <div>
+      <div class="db-brand-name">KiwiFix</div>
+      <div class="db-brand-tag">Trusted Trades. Right When You Need Us.</div>
+    </div>
+  </a>
+
+  <nav style="display:flex;gap:4px">
+    <a class="db-nav-link active" href="#">Dashboard</a>
+    <a class="db-nav-link" href="#">My Jobs</a>
+    <a class="db-nav-link" href="#">Messages</a>
+    <a class="db-nav-link" href="#">Earnings</a>
+  </nav>
+
+  <div class="db-header-right">
+    <div class="db-notif">🔔<div class="db-notif-dot"></div></div>
+    <div class="db-avatar" id="db-header-avatar">RG</div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════
+     LAYOUT
+══════════════════════════════════════ -->
+<div class="db-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="db-sidebar">
+
+    <!-- Profile block -->
+    <div class="db-profile-block">
+      <div class="db-profile-photo">
+        <span id="db-profile-initials">RG</span>
+        <div class="db-verified-badge">✓</div>
+      </div>
+      <div class="db-profile-name" id="db-profile-name">Rajee Gangadaran</div>
+      <div class="db-profile-trade" id="db-profile-trade">⚡ Electrician</div>
+      <div class="db-stars" id="db-stars">★★★★★</div>
+      <div class="db-rating-text" id="db-rating-text">4.9 · 38 reviews</div>
+      <div class="db-profile-area" id="db-profile-area">📍 Waikato, Hamilton</div>
+      <div class="db-profile-complete">
+        <div style="display:flex;justify-content:space-between;font-size:11px">
+          <span>Profile complete</span><span id="db-pct-text" style="color:var(--green);font-weight:700">85%</span>
+        </div>
+        <div class="db-pct-bar"><div class="db-pct-fill" id="db-pct-fill"></div></div>
+        <div style="font-size:11px;color:var(--muted)" id="db-pct-hint">Add a profile photo to reach 100%</div>
+      </div>
+    </div>
+
+    <div class="db-sidebar-section">Menu</div>
+
+    <a class="db-sidebar-item active" href="#">
+      <span class="icon">🏠</span> Dashboard
+    </a>
+    <a class="db-sidebar-item" href="#">
+      <span class="icon">🔍</span> Find Jobs
+      <span class="db-badge">12</span>
+    </a>
+    <a class="db-sidebar-item" href="#">
+      <span class="icon">📋</span> My Applications
+    </a>
+    <a class="db-sidebar-item" href="#">
+      <span class="icon">✅</span> Completed Jobs
+    </a>
+    <a class="db-sidebar-item" href="#">
+      <span class="icon">💬</span> Messages
+      <span class="db-badge">3</span>
+    </a>
+    <a class="db-sidebar-item" href="#">
+      <span class="icon">💰</span> Earnings
+    </a>
+
+    <div class="db-sidebar-section">Account</div>
+
+    <a class="db-sidebar-item" href="index.html#tradie-personal">
+      <span class="icon">👤</span> Edit Profile
+    </a>
+    <a class="db-sidebar-item" href="#">
+      <span class="icon">⚙️</span> Settings
+    </a>
+    <a class="db-sidebar-item" href="index.html" style="color:#EF4444">
+      <span class="icon">🚪</span> Sign Out
+    </a>
+
+  </aside>
+
+  <!-- MAIN -->
+  <main class="db-main">
+
+    <!-- Greeting -->
+    <div class="db-greeting">
+      <h1 id="db-greeting-name">Good morning, Rajee 👋</h1>
+      <p>Here's what's happening in your area today — Friday, 4 July 2026</p>
+    </div>
+
+    <!-- Stats -->
+    <div class="db-stats">
+      <div class="db-stat-card">
+        <div class="db-stat-label">✅ Jobs Completed</div>
+        <div class="db-stat-value" id="stat-jobs-completed">38</div>
+        <div class="db-stat-sub" id="stat-jobs-completed-sub">↑ 4 this month</div>
+      </div>
+      <div class="db-stat-card">
+        <div class="db-stat-label">🔄 Active Jobs</div>
+        <div class="db-stat-value" id="stat-active-jobs">2</div>
+        <div class="db-stat-sub" id="stat-active-jobs-sub">In progress now</div>
+      </div>
+      <div class="db-stat-card">
+        <div class="db-stat-label">⭐ Average Rating</div>
+        <div class="db-stat-value" id="stat-avg-rating">4.9</div>
+        <div class="db-stat-sub" id="stat-avg-rating-sub">From 38 reviews</div>
+      </div>
+      <div class="db-stat-card">
+        <div class="db-stat-label">💰 This Month</div>
+        <div class="db-stat-value" id="stat-month-earnings">$3,240</div>
+        <div class="db-stat-sub" id="stat-month-earnings-sub">↑ 18% vs last month</div>
+      </div>
+    </div>
+
+    <!-- Main content grid -->
+    <div class="db-content-grid">
+
+      <!-- LEFT: Jobs in area -->
+      <div>
+        <div class="db-section-header">
+          <div class="db-section-title">📍 New Jobs in Your Area</div>
+          <a class="db-see-all" href="#">See all 12 →</a>
+        </div>
+
+        <!-- Job 1 -->
+        <div class="db-job-card">
+          <div class="db-job-card-top">
+            <span class="db-job-cat">⚡ Electrical</span>
+            <span class="db-job-urgency db-urgency-emergency">🔴 Emergency</span>
+          </div>
+          <div class="db-job-title">Switchboard keeps tripping — urgent fix needed</div>
+          <div class="db-job-desc">The main switchboard has been tripping every few hours. We have young kids at home and need this fixed as soon as possible. House is 3 bedrooms.</div>
+          <div class="db-job-meta">
+            <span>📍 Nawton, Hamilton</span>
+            <span>🕐 Posted 25 min ago</span>
+            <span>👁 4 tradies viewed</span>
+          </div>
+          <div class="db-job-actions">
+            <button class="db-btn-primary">Apply Now</button>
+            <button class="db-btn-secondary">View Details</button>
+          </div>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="db-job-card">
+          <div class="db-job-card-top">
+            <span class="db-job-cat">⚡ Electrical</span>
+            <span class="db-job-urgency db-urgency-within-week">🟠 Within a week</span>
+          </div>
+          <div class="db-job-title">Install 4 new power outlets in home office</div>
+          <div class="db-job-desc">Working from home and need additional power points installed in my office room. Currently only have 2 double outlets. Need 4 more added.</div>
+          <div class="db-job-meta">
+            <span>📍 Dinsdale, Hamilton</span>
+            <span>🕐 Posted 2 hrs ago</span>
+            <span>👁 7 tradies viewed</span>
+          </div>
+          <div class="db-job-actions">
+            <button class="db-btn-primary">Apply Now</button>
+            <button class="db-btn-secondary">View Details</button>
+          </div>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="db-job-card">
+          <div class="db-job-card-top">
+            <span class="db-job-cat">💡 Lighting</span>
+            <span class="db-job-urgency db-urgency-flexible">🟢 Flexible</span>
+          </div>
+          <div class="db-job-title">Replace all light fittings with LED downlights</div>
+          <div class="db-job-desc">Want to upgrade the whole house to LED downlights. Currently have old halogen fittings throughout. 4 bedrooms, lounge, kitchen, 2 bathrooms.</div>
+          <div class="db-job-meta">
+            <span>📍 Rototuna, Hamilton</span>
+            <span>🕐 Posted 5 hrs ago</span>
+            <span>👁 11 tradies viewed</span>
+          </div>
+          <div class="db-job-actions">
+            <button class="db-btn-primary">Apply Now</button>
+            <button class="db-btn-secondary">View Details</button>
+          </div>
+        </div>
+
+        <!-- Job 4 -->
+        <div class="db-job-card">
+          <div class="db-job-card-top">
+            <span class="db-job-cat">⚡ Electrical</span>
+            <span class="db-job-urgency db-urgency-within-week">🟠 Within a week</span>
+          </div>
+          <div class="db-job-title">EV charger installation in garage</div>
+          <div class="db-job-desc">Just bought a new electric vehicle and need a dedicated EV charger installed in my garage. Looking for a certified electrician who has done this before.</div>
+          <div class="db-job-meta">
+            <span>📍 Te Rapa, Hamilton</span>
+            <span>🕐 Posted 1 day ago</span>
+            <span>👁 19 tradies viewed</span>
+          </div>
+          <div class="db-job-actions">
+            <button class="db-btn-primary">Apply Now</button>
+            <button class="db-btn-secondary">View Details</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="db-right-col">
+
+        <!-- Availability toggle -->
+        <div class="db-card">
+          <div class="db-avail-row">
+            <div>
+              <div class="db-avail-label">🟢 Available for Work</div>
+              <div class="db-avail-sub">Job posters can see and contact you</div>
+            </div>
+            <label class="db-toggle">
+              <input type="checkbox" checked onchange="toggleAvail(this)"/>
+              <div class="db-toggle-track"></div>
+              <div class="db-toggle-thumb"></div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Profile summary -->
+        <div class="db-card">
+          <div class="db-section-header" style="margin-bottom:14px">
+            <div class="db-section-title">Profile Summary</div>
+            <a class="db-see-all" href="index.html#tradie-personal">Edit →</a>
+          </div>
+
+          <div class="db-profile-summary-row">
+            <div class="db-summary-avatar" id="db-summary-avatar">RG</div>
+            <div>
+              <div class="db-summary-name" id="db-summary-name">Rajee Gangadaran</div>
+              <div class="db-summary-trade" id="db-summary-trade">⚡ Electrician · ✓ Verified</div>
+            </div>
+          </div>
+
+          <div class="db-info-row"><span class="db-info-label">Trade Type</span><span class="db-info-value" id="db-info-trade">Electrician</span></div>
+          <div class="db-info-row"><span class="db-info-label">Service Area</span><span class="db-info-value" id="db-info-area">Waikato</span></div>
+          <div class="db-info-row"><span class="db-info-label">Licence</span><span class="db-info-value" id="db-info-licence">✓ Verified</span></div>
+          <div class="db-info-row"><span class="db-info-label">Insurance</span><span class="db-info-value" id="db-info-insurance">✓ Verified</span></div>
+          <div class="db-info-row"><span class="db-info-label">Response Time</span><span class="db-info-value" id="db-info-response">Under 1 hour</span></div>
+          <div class="db-info-row"><span class="db-info-label">Member Since</span><span class="db-info-value" id="db-info-member-since">June 2026</span></div>
+        </div>
+
+        <!-- Recent jobs -->
+        <div class="db-card">
+          <div class="db-section-header" style="margin-bottom:14px">
+            <div class="db-section-title">Recent Jobs</div>
+            <a class="db-see-all" href="#" id="db-recent-jobs-see-all">View all →</a>
+          </div>
+
+          <div id="db-recent-jobs-list">
+          <div class="db-recent-job">
+            <div class="db-recent-icon" style="background:#F0FDF4">⚡</div>
+            <div>
+              <div class="db-recent-job-title">Switchboard upgrade</div>
+              <div class="db-recent-job-meta">Claudelands · 28 Jun</div>
+            </div>
+            <span class="db-status-pill db-status-done">Completed</span>
+          </div>
+
+          <div class="db-recent-job">
+            <div class="db-recent-icon" style="background:#EFF6FF">💡</div>
+            <div>
+              <div class="db-recent-job-title">LED downlight install</div>
+              <div class="db-recent-job-meta">Rototuna · 25 Jun</div>
+            </div>
+            <span class="db-status-pill db-status-active">Active</span>
+          </div>
+
+          <div class="db-recent-job">
+            <div class="db-recent-icon" style="background:#F0FDF4">⚡</div>
+            <div>
+              <div class="db-recent-job-title">Power outlet installation</div>
+              <div class="db-recent-job-meta">Te Rapa · 22 Jun</div>
+            </div>
+            <span class="db-status-pill db-status-done">Completed</span>
+          </div>
+
+          <div class="db-recent-job">
+            <div class="db-recent-icon" style="background:#FFF7ED">🔌</div>
+            <div>
+              <div class="db-recent-job-title">EV charger install</div>
+              <div class="db-recent-job-meta">Dinsdale · In progress</div>
+            </div>
+            <span class="db-status-pill db-status-active">Active</span>
+          </div>
+
+          <div class="db-recent-job">
+            <div class="db-recent-icon" style="background:#F0FDF4">⚡</div>
+            <div>
+              <div class="db-recent-job-title">Smoke alarm upgrade</div>
+              <div class="db-recent-job-meta">Nawton · 18 Jun</div>
+            </div>
+            <span class="db-status-pill db-status-done">Completed</span>
+          </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div><!-- end content grid -->
+
+  </main>
+</div>
+
+<script>
+  // Pull in real data from tradie registration (set by completeTradieOnboarding() in app.js).
+  // Falls back to the demo persona above if a tradie hasn't registered yet (e.g. direct visit).
+  (function hydrateFromRegistration() {
+    const raw = localStorage.getItem('kiwifix_tradie_profile');
+    if (!raw) return;
+    let data;
+    try { data = JSON.parse(raw); } catch (e) { return; }
+
+    const fullName = [data.firstName, data.lastName].filter(Boolean).join(' ') || 'there';
+    const initials = ((data.firstName || '')[0] || '') + ((data.lastName || '')[0] || '') || 'T';
+    const tradeIcons = { Plumber:'🔧', Electrician:'⚡', Builder:'🏗️', Painter:'🎨', Gardener:'🌿', Cleaner:'🧹', Roofer:'🏠', Tiler:'🪟', Other:'⚙️' };
+    const primaryTrade = (data.tradeTypes && data.tradeTypes[0]) || 'Tradie';
+    const tradeLabel = (tradeIcons[primaryTrade] || '🔧') + ' ' + primaryTrade;
+    const areaLabel = [data.region, data.areas && data.areas[0]].filter(Boolean).join(', ') || 'Not set yet';
+
+    document.getElementById('db-header-avatar').textContent = initials.toUpperCase();
+    document.getElementById('db-summary-avatar').textContent = initials.toUpperCase();
+    document.getElementById('db-profile-initials').textContent = initials.toUpperCase();
+    document.getElementById('db-profile-name').textContent = fullName;
+    document.getElementById('db-summary-name').textContent = fullName;
+    document.getElementById('db-profile-trade').textContent = tradeLabel;
+    document.getElementById('db-summary-trade').textContent = tradeLabel + ' · Pending Verification';
+    document.getElementById('db-profile-area').textContent = '📍 ' + areaLabel;
+
+    const hour = new Date().getHours();
+    const greeting = hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening';
+    document.getElementById('db-greeting-name').textContent = greeting + ', ' + (data.firstName || fullName) + ' 👋';
+
+    // Brand-new tradie — no reviews yet
+    document.getElementById('db-stars').textContent = '☆☆☆☆☆';
+    document.getElementById('db-rating-text').textContent = 'New tradie · No reviews yet';
+
+    // Profile completeness carried over from registration progress
+    const pct = typeof data.profilePct === 'number' ? data.profilePct : 100;
+    document.getElementById('db-pct-text').textContent = pct + '%';
+    document.getElementById('db-pct-fill').style.width = pct + '%';
+    document.getElementById('db-pct-hint').textContent = pct >= 100
+      ? 'Your profile is complete!'
+      : 'Finish your profile to unlock more jobs.';
+
+    // Stats — fresh account, nothing completed yet
+    document.getElementById('stat-jobs-completed').textContent = data.jobsCompleted || 0;
+    document.getElementById('stat-jobs-completed-sub').textContent = 'Get your first job done!';
+    document.getElementById('stat-active-jobs').textContent = data.activeJobs || 0;
+    document.getElementById('stat-active-jobs-sub').textContent = 'None yet';
+    document.getElementById('stat-avg-rating').textContent = data.avgRating == null ? '—' : data.avgRating;
+    document.getElementById('stat-avg-rating-sub').textContent = 'No reviews yet';
+    document.getElementById('stat-month-earnings').textContent = '$' + (data.monthEarnings || 0).toLocaleString();
+    document.getElementById('stat-month-earnings-sub').textContent = 'No earnings yet';
+
+    // Profile summary card
+    document.getElementById('db-info-trade').textContent = (data.tradeTypes && data.tradeTypes.join(', ')) || primaryTrade;
+    document.getElementById('db-info-area').textContent = areaLabel;
+    document.getElementById('db-info-licence').textContent = 'Pending Verification';
+    document.getElementById('db-info-insurance').textContent = 'Pending Verification';
+    document.getElementById('db-info-response').textContent = 'New tradie';
+    document.getElementById('db-info-member-since').textContent = data.memberSince || '';
+
+    // Recent jobs — empty state for a fresh profile
+    const list = document.getElementById('db-recent-jobs-list');
+    if (list && (!data.recentJobs || data.recentJobs.length === 0)) {
+      list.innerHTML = '<p style="color:#94a3b8;font-size:14px;padding:8px 0">No jobs yet — apply to jobs in your area to get started!</p>';
+    }
+    const seeAll = document.getElementById('db-recent-jobs-see-all');
+    if (seeAll) seeAll.style.display = 'none';
+  })();
+
+  function toggleAvail(checkbox) {
+    const label = checkbox.closest('.db-card').querySelector('.db-avail-label');
+    if (checkbox.checked) {
+      label.textContent = '🟢 Available for Work';
+    } else {
+      label.textContent = '🔴 Not Available';
+    }
+  }
+</script>
+
+</body>
+</html>
